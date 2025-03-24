@@ -1,112 +1,90 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import styles from "./styles/Header.module.scss";
+import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaBars } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
-import { RiArrowDropDownLine } from "react-icons/ri";
+import Image from "next/image";
+import Link from "next/link";
 
-const navItems = [
-  {
-    title: "Online Degree Program",
-    subItems: [
-      "BBA", "BCA", "BCom", "MBA", "MCA", "MSc. (Maths & Data Sci.)", "MA(JMC)", "MCom", "M library & Information Science", "MA (Psychology)", "MA (English)", "MA (Sociology)"
-    ],
-  },
-  {
-    title: "WILP BTech (3.5 years)",
-    subItems: ["M.Tech", "M.Sc", "MBA", "MA"],
-  },
-  {
-    title: "Executive MTech (1 year)",
-    subItems: [
-      "Executive M. Tech in Digital Manufacturing", "Executive MTech in CPS with AI", "Executive MTech in VLSI and Embedded Systems", "Executive MTech in Project Management", "Executive MTech in Safety Engineering", "Executive MTech in Electric Vehicle Systems", "Executive MTech in Power Electronics and Drive", "Executive MTech in Power System Engineering", "Executive MTech in Cyber Security", "Executive MTech in Data Science"
-    ],
-  },
-  {
-    title: "Executive MBA (1 year)",
-    subItems: [
-      "Executive MBA in Resource Management", "Executive MBA in Information Technology", "Executive MBA in FinTech", "Executive MBA in Finance", "Executive MBA in Marketing", "Executive MBA in Operation Management", "Executive MBA in Healthcare Management"
-    ]
-  },
-];
+const programs = {
+  "Online Degree Program": ["BBA", "BCA", "MBA", "MCA"],
+  "WILP BTech (3.5 years)": ["Mechanical", "Electrical", "Computer Science"],
+};
 
-const Header = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [subDropdownOpen, setSubDropdownOpen] = useState<number | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const openDropdown = () => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setDropdownOpen(true);
-  };
-
-  const closeDropdown = () => {
-    timeoutRef.current = setTimeout(() => {
-      setDropdownOpen(false);
-      setSubDropdownOpen(null);
-    }, 500);
-  };
+export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [subDropdown, setSubDropdown] = useState<string | null>(null);
 
   return (
     <header className={styles.header}>
-      {/* Top Section */}
-      <div className={styles.top}>
-        <span className={styles.university}>Kalinga Institute of Industrial Technology</span>
-        <div className={styles.links}>
-          <a href="/login">Portal Login</a>
-          <a href="/contact">Contact Us</a>
+      <div className={styles.container}>
+        {/* Logo Section */}
+        <div className={styles.logoContainer}>
+          <Link href="/">
+            <Image src="/Picture1.png" alt="KIIT eXtension" width={150} height={50} />
+          </Link>
         </div>
-      </div>
 
-      {/* Bottom Section */}
-      <div className={styles.bottom}>
-        <div className={styles.logo}>KIIT Logo</div>
+        {/* Navigation Section */}
+        <div className={styles.navContainer}>
+          <nav className={`${styles.nav} ${menuOpen ? styles.navMobile : ""}`}>
+            <ul>
+              {/* Programs Dropdown */}
+              <li
+                className={styles.dropdown}
+                onMouseEnter={() => setActiveDropdown("Programs")}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <span onClick={() => setActiveDropdown(activeDropdown === "Programs" ? null : "Programs")}>
+                  Programs <RiArrowDropDownLine size={20} />
+                </span>
+                {activeDropdown === "Programs" && (
+                  <ul className={styles.dropdownMenu}>
+                    {Object.keys(programs).map((program) => (
+                      <li
+                        key={program}
+                        className={styles.nestedDropdown}
+                        onMouseEnter={() => setSubDropdown(program)}
+                        onMouseLeave={() => setSubDropdown(null)}
+                      >
+                        <span onClick={() => setSubDropdown(subDropdown === program ? null : program)}>
+                          {program} 
+                        </span>
+                        {subDropdown === program && (
+                          <ul className={styles.subDropdown}>
+                            {programs[program].map((item) => (
+                              <li key={item}>
+                                <Link href={`/${item.toLowerCase()}`}>{item}</Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+              <li>
+                <Link href="/about-us">About Us</Link>
+              </li>
+              <li>
+                <Link href="/portal-login">Portal Login</Link>
+              </li>
+              <li>
+                <Link href="/contact-us">Contact Us</Link>
+              </li>
+            </ul>
+          </nav>
 
-        {/* Mobile Menu Toggle */}
-        {mobileMenuOpen ? (
-          <RxCross2 className={styles.menuIcon} size={24} onClick={() => setMobileMenuOpen(false)} />
-        ) : (
-          <FaBars className={styles.menuIcon} size={24} onClick={() => setMobileMenuOpen(true)} />
-        )}
-
-        {/* Navigation (desktop & mobile) */}
-        <nav className={`${styles.nav} ${mobileMenuOpen ? styles.showMobile : ""}`}>
-          <div
-            className={styles.programs}
-            onMouseEnter={openDropdown}
-            onMouseLeave={closeDropdown}
-            onClick={() => setDropdownOpen((prev) => !prev)}
-          >
-            <span>Programs</span>
-            <RiArrowDropDownLine size={24} />
-
-            {dropdownOpen && (
-              <ul className={styles.dropdown}>
-                {navItems.map((item, index) => (
-                  <li
-                    key={index}
-                    onMouseEnter={() => setSubDropdownOpen(index)}
-                    onMouseLeave={() => setSubDropdownOpen(null)}
-                  >
-                    {item.title}
-                    {subDropdownOpen === index && (
-                      <ul className={styles.subDropdown}>
-                        {item.subItems.map((subItem, subIndex) => (
-                          <li key={subIndex}>{subItem}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            )}
+          {/* Mobile Menu Toggle */}
+          <div className={styles.mobileToggle} onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <RxCross2 size={28} /> : <FaBars size={28} />}
           </div>
-        </nav>
+        </div>
       </div>
     </header>
   );
-};
-
-export default Header;
+}
