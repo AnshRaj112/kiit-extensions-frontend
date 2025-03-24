@@ -8,7 +8,7 @@ import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
 import Link from "next/link";
 
-const programs = {
+const programs: Record<string, string[]> = {
   "Online Degree Program": ["BBA", "BCA", "MBA", "MCA"],
   "WILP BTech (3.5 years)": ["Mechanical", "Electrical", "Computer Science"],
 };
@@ -51,11 +51,11 @@ export default function Header() {
                         onMouseLeave={() => setSubDropdown(null)}
                       >
                         <span onClick={() => setSubDropdown(subDropdown === program ? null : program)}>
-                          {program} 
+                          {program}
                         </span>
                         {subDropdown === program && (
                           <ul className={styles.subDropdown}>
-                            {programs[program].map((item) => (
+                            {programs[program].map((item) => ( 
                               <li key={item}>
                                 <Link href={`/${item.toLowerCase()}`}>{item}</Link>
                               </li>
@@ -66,9 +66,6 @@ export default function Header() {
                     ))}
                   </ul>
                 )}
-              </li>
-              <li>
-                <Link href="/about-us">About Us</Link>
               </li>
               <li>
                 <Link href="/portal-login">Portal Login</Link>
