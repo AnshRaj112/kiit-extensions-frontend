@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Foot from "./Foot";
 // import Link from "next/link";
 
 export default function Footer() {
   return (
-    <div>
+    <div className="flex flex-col">
       <div className="flex flex-row justify-between items-center text-2xl h-[80px] bg-[#477528] py-5 font-semibold">
         <div className="px-[2%] flex flex-row gap-2">
           <svg
@@ -26,13 +27,21 @@ export default function Footer() {
           <p>080-00000000</p>
         </div>
         <div className="px-[5%] flex flex-row gap-2">
-          <Image src={"/mail.png"} alt="not found" className="bg-[#00FF00] rounded-2xl p-2" width={30} height={30} />
+          <Image
+            src={"/mail.png"}
+            alt="not found"
+            className="bg-[#00FF00] rounded-2xl p-2"
+            width={30}
+            height={30}
+          />
           <a href="mailto:admission@kiitx.com">admission@kiitx.com</a>
         </div>
         <div className="px-[5%] bg-yellow-300 h-full text-black">
           Admission Enquiry
         </div>
       </div>
+
+      <Foot />
     </div>
   );
 }
