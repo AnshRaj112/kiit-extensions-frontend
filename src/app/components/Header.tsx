@@ -9,8 +9,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const programs: Record<string, string[]> = {
-  "Online Degree Program": ["BBA", "BCA", "MBA", "MCA"],
-  "WILP BTech (3.5 years)": ["Mechanical", "Electrical", "Computer Science"],
+  "Online Degree Program": ["BBA", "BCA", "MBA", "MCA", "Law"],
+  "WILP BTech (3.5 years)": ["Mechanical", "Electrical", "Computer Science", "Civil"],
+  "Branch": ["a", 'b'],
 };
 
 export default function Header() {
