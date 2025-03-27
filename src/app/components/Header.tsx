@@ -4,14 +4,14 @@ import { useState } from "react";
 import styles from "./styles/Header.module.scss";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaBars } from "react-icons/fa";
-import { RxCross2 } from "react-icons/rx";
+// import { RxCross2 } from "react-icons/rx";
 import Image from "next/image";
 import Link from "next/link";
 
 const programs: Record<string, string[]> = {
   "Online Degree Program": ["BBA", "BCA", "MBA", "MCA", "Law"],
   "WILP BTech (3.5 years)": ["Mechanical", "Electrical", "Computer Science", "Civil"],
-  "Branch": ["a", 'b'],
+  "Branch": ["a", "b", "c"],
 };
 
 export default function Header() {
@@ -31,7 +31,7 @@ export default function Header() {
 
         {/* Navigation Section */}
         <div className={styles.navContainer}>
-          <nav className={`${styles.nav} ${menuOpen ? styles.navMobile : ""}`}>
+          <nav className={styles.nav}>
             <ul>
               {/* Programs Dropdown */}
               <li
@@ -56,7 +56,7 @@ export default function Header() {
                         </span>
                         {subDropdown === program && (
                           <ul className={styles.subDropdown}>
-                            {programs[program].map((item) => ( 
+                            {programs[program].map((item) => (
                               <li key={item}>
                                 <Link href={`/${item.toLowerCase()}`}>{item}</Link>
                               </li>
@@ -68,19 +68,29 @@ export default function Header() {
                   </ul>
                 )}
               </li>
-              <li>
-                <Link href="/portal-login">Portal Login</Link>
-              </li>
-              <li>
-                <Link href="/contact-us">Contact Us</Link>
+
+              {/* FaBars Menu (Only in Desktop View) */}
+              <li
+                className={styles.dropdown}
+                onMouseEnter={() => setActiveDropdown("Menu")}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <span>
+                  <FaBars size={20} />
+                </span>
+                {activeDropdown === "Menu" && (
+                  <ul className={styles.dropdownMenu}>
+                    <li>
+                      <Link href="/portal-login">Portal Login</Link>
+                    </li>
+                    <li>
+                      <Link href="/contact-us">Contact Us</Link>
+                    </li>
+                  </ul>
+                )}
               </li>
             </ul>
           </nav>
-
-          {/* Mobile Menu Toggle */}
-          <div className={styles.mobileToggle} onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <RxCross2 size={28} /> : <FaBars size={28} />}
-          </div>
         </div>
       </div>
     </header>
