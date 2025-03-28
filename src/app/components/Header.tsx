@@ -4,7 +4,7 @@ import { useState } from "react";
 import styles from "./styles/Header.module.scss";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { FaBars } from "react-icons/fa";
-// import { RxCross2 } from "react-icons/rx";
+import { RxCross2 } from "react-icons/rx"; // Uncommenting to use it
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,14 +25,14 @@ export default function Header() {
         {/* Logo Section */}
         <div className={styles.logoContainer}>
           <Link href="/">
-            <Image src="/Picture1.png" alt="KIIT eXtension" width={150} height={50} />
+            <Image src="/Picture1.png" alt="KIIT eXtension" width={90} height={30} />
           </Link>
         </div>
 
         {/* Navigation Section */}
         <div className={styles.navContainer}>
           <nav className={styles.nav}>
-            <ul>
+            <ul className={menuOpen ? styles.mobileMenu : ""}>
               {/* Programs Dropdown */}
               <li
                 className={styles.dropdown}
@@ -70,15 +70,11 @@ export default function Header() {
               </li>
 
               {/* FaBars Menu (Only in Desktop View) */}
-              <li
-                className={styles.dropdown}
-                onMouseEnter={() => setActiveDropdown("Menu")}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <span>
-                  <FaBars size={20} />
+              <li className={styles.dropdown}>
+                <span onClick={() => setMenuOpen(!menuOpen)}>
+                  {menuOpen ? <RxCross2 size={20} /> : <FaBars size={20} />}
                 </span>
-                {activeDropdown === "Menu" && (
+                {menuOpen && (
                   <ul className={styles.dropdownMenu}>
                     <li>
                       <Link href="/portal-login">Portal Login</Link>
