@@ -32,23 +32,23 @@ export function HomeCarousel() {
       setApi={setApi}
       plugins={[
         Autoplay({
-          delay: 2000, // Autoplay every 2 seconds
-          stopOnInteraction: false, // Ensures autoplay continues even after user interaction
+          delay: 2000, 
+          stopOnInteraction: false,
         }),
       ]}
-      className="w-screen h-screen"
+      className="w-full pt-[60px] sm:pt-0" 
     >
       <CarouselContent>
         {images.map((image, index) => (
-          <CarouselItem key={index} className="flex justify-center items-center w-screen h-screen">
-            <a href={image.link} target="_blank" rel="noopener noreferrer" className="w-full h-full">
+          <CarouselItem key={index} className="flex justify-center items-center w-full">
+            <a href={image.link} target="_blank" rel="noopener noreferrer" className="w-full">
               <Image
                 src={image.src}
                 alt={image.alt}
-                width={800}
-                height={500}
-                priority={index === 0} // Improves LCP for the first image
-                className="rounded-lg shadow-lg w-full h-auto"
+                width={1899} // Adjusted for full width
+                height={818} // Maintains aspect ratio
+                priority={index === 0} 
+                className="w-full h-auto rounded-lg shadow-lg"
               />
             </a>
           </CarouselItem>

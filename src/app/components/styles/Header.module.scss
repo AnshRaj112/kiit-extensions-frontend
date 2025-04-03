@@ -1,7 +1,10 @@
 .header {
+  position: fixed;
+  width: 100%;
   background-color: #fff;
   padding: 10px 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .container {
@@ -104,40 +107,40 @@
   cursor: pointer;
 }
 
-/* Responsive Fixes */
-@media (max-width: 768px) {
-  .nav ul {
-    flex-direction: column;
-  }
+// /* Responsive Fixes */
+// @media (max-width: 768px) {
+//   .nav ul {
+//     flex-direction: column;
+//   }
 
-  .navContainer {
-    display: none;
-  }
+//   .navContainer {
+//     display: none;
+//   }
 
-  .mobileToggle {
-    display: block;
-  }
+//   .mobileToggle {
+//     display: block;
+//   }
 
-  .navMobile {
-    display: flex;
-    flex-direction: column;
-    background: white;
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+//   .navMobile {
+//     display: flex;
+//     flex-direction: column;
+//     background: white;
+//     position: absolute;
+//     top: 60px;
+//     right: 20px;
+//     border: 1px solid #ddd;
+//     padding: 10px;
+//     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+//   }
 
-  /* Dropdown menus are now vertical */
-  .dropdownMenu,
-  .subDropdown {
-    position: static;
-    background: none;
-    border: none;
-    box-shadow: none;
-    display: flex;
-    flex-direction: column;
-  }
-}
+//   /* Dropdown menus are now vertical */
+//   .dropdownMenu,
+//   .subDropdown {
+//     position: static;
+//     background: none;
+//     border: none;
+//     box-shadow: none;
+//     display: flex;
+//     flex-direction: column;
+//   }
+// }
