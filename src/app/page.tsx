@@ -6,12 +6,14 @@ import TopPrograms from "./components/sections/Sec5";
 import AlumniSection from "./components/sections/Sec6";
 // import Ranking from "./components/sections/Sec7";
 import AccreditationAndRanking from "./components/sections/Accreditation";
+import PageMain from "./components/PageMain";
 
 export default function Home() {
   return (
     <div>
       <HomeCarousel />
       <AccreditationAndRanking />
+      <PageMain />
       <KIITXExtension />
       <KiitxStructure />
       <VisionMission />

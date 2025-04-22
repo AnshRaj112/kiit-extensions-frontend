@@ -80,7 +80,7 @@ const AccreditationAndRanking = () => {
             src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316828/46fcf251-f75a-4a70-bbdb-5a32ac003fca.png"
             alt="NIRF Logo"
             width={180}
-            height={180}
+            height={100}
             className="mb-2 mx-auto"
           />
           <p className="text-2xl font-bold text-gray-800">
@@ -95,7 +95,7 @@ const AccreditationAndRanking = () => {
             src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316931/4413100a-f28b-43ce-99a9-9db1a9535ede.png"
             alt="QS Logo"
             width={180}
-            height={180}
+            height={100}
             className="mb-2 mx-auto"
           />
           <p className="text-xl font-bold text-yellow-600">QS 5 Stars</p>
@@ -112,8 +112,8 @@ const AccreditationAndRanking = () => {
           <Image
             src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745317017/157bcf7d-49fe-4b4d-bce1-a66d3e97798b.png"
             alt="ARIIA Logo"
-            width={280}
-            height={280}
+            width={180}
+            height={100}
             className="mb-2 mx-auto"
           />
           <p className="text-2xl font-bold text-gray-800">1<sup>st</sup> Rank</p>
@@ -126,7 +126,7 @@ const AccreditationAndRanking = () => {
             src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745317095/f3aec781-6341-492d-af72-2b90e56f7957.png"
             alt="THE Logo"
             width={180}
-            height={180}
+            height={100}
             className="mb-2 mx-auto"
           />
           <p className="text-2xl font-bold text-gray-800">6<sup>th</sup> Rank</p>
