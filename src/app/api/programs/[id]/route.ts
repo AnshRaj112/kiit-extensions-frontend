@@ -1,8 +1,7 @@
-// app/api/programs/[id]/route.ts
 import { connectDB } from "@/lib/db";
 import Program from "@/models/Program";
 import { NextRequest, NextResponse } from "next/server";
-import { ObjectId } from "mongoose";
+import { ObjectId } from "mongodb";
 
 export async function PUT(req: NextRequest) {
   try {
