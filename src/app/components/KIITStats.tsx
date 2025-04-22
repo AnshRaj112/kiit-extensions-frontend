@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import {
   GraduationCap,
@@ -49,27 +51,27 @@ const stats = [
 
 export default function KIITStats() {
   return (
-    <div className="w-full flex flex-col items-center mb-10">
+    <div className="w-full flex flex-col items-center mb-10 px-4">
       <h2 className="text-3xl font-bold text-green-600 mt-4 mb-2">The KiiT</h2>
-      <div className="w-54 border-t-2 border-green-400 mb-4"></div>
-      <div className="flex w-full max-w-6xl h-[500px] gap-x-6">
+      <div className="w-24 border-t-2 border-green-400 mb-6" />
+
+      <div className="flex flex-col md:flex-row w-full max-w-6xl gap-6">
         {/* Left: Image */}
-        <div className="w-1/2 h-full relative">
+        <div className="w-full md:w-1/2 relative aspect-video md:aspect-auto md:h-[500px]">
           <Image
             src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745350483/b902a7bc-915d-46c1-9de6-45a5c65da9fe.png"
             alt="KIIT"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-l-lg"
+            fill
+            className="object-cover rounded-lg md:rounded-l-lg"
           />
         </div>
 
         {/* Right: Stats */}
-        <div className="w-1/2 flex flex-col justify-between py-4">
+        <div className="w-full md:w-1/2 flex flex-col justify-between gap-4 py-2">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`flex items-center px-6 py-3 ${stat.color} text-white text-lg font-semibold rounded-r-lg`}
+              className={`flex items-center px-5 py-4 ${stat.color} text-white text-lg font-semibold rounded-lg`}
             >
               <div className="w-10 h-10 border-2 border-white rounded-full mr-4 flex items-center justify-center">
                 {stat.icon}
@@ -85,3 +87,4 @@ export default function KIITStats() {
     </div>
   );
 }
+    
