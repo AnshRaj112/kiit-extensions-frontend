@@ -122,3 +122,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+.clip-roof {
+  clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+/* Animation for logo hover effect */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
