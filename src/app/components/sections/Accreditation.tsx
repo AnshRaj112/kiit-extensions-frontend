@@ -112,8 +112,8 @@ const AccreditationAndRanking = () => {
           <Image
             src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745317017/157bcf7d-49fe-4b4d-bce1-a66d3e97798b.png"
             alt="ARIIA Logo"
-            width={180}
-            height={180}
+            width={280}
+            height={280}
             className="mb-2 mx-auto"
           />
           <p className="text-2xl font-bold text-gray-800">1<sup>st</sup> Rank</p>
