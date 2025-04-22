@@ -10,7 +10,7 @@ const AccreditationAndRanking = () => {
       <h2 className="text-3xl font-semibold text-center text-green-600 mb-2">
         Accreditation
       </h2>
-      <div className="h-1 w-182 bg-green-400 mx-auto mb-6 rounded-full" />
+      <div className="h-1 w-11/12 sm:w-4/5 md:w-3/5 lg:w-2/5 bg-green-400 mx-auto mb-6 rounded-full" />
 
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center items-center border-b pb-10 border-green-400">
         {/* UGC */}
@@ -71,7 +71,7 @@ const AccreditationAndRanking = () => {
       <h2 className="text-3xl font-semibold text-center text-green-600 mt-10 mb-2">
         Ranking
       </h2>
-      <div className="h-1 w-182 bg-green-400 mx-auto mb-6 rounded-full" />
+      <div className="h-1 w-11/12 sm:w-4/5 md:w-3/5 lg:w-2/5 bg-green-400 mx-auto mb-6 rounded-full" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
         {/* NIRF */}
