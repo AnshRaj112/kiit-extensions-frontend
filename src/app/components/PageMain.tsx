@@ -1,4 +1,6 @@
-// pages/Home.tsx
+// pages/PageMain.tsx
+"use client";
+
 import React from "react";
 import ProgramSection from "./ProgramSection";
 

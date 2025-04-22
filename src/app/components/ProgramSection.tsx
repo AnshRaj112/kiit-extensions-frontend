@@ -1,4 +1,3 @@
-// components/ProgramSection.tsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -19,7 +18,11 @@ type SectionProps = {
   color?: string;
 };
 
-const ProgramSection: React.FC<SectionProps> = ({ title, category, color = "#37c55e" }) => {
+const ProgramSection: React.FC<SectionProps> = ({
+  title,
+  category,
+  color = "#37c55e",
+}) => {
   const [programs, setPrograms] = useState<Program[]>([]);
 
   useEffect(() => {
@@ -40,24 +43,47 @@ const ProgramSection: React.FC<SectionProps> = ({ title, category, color = "#37c
     fetchPrograms();
   }, [category]);
 
+  // Check if it's the "Certificate Program (Online)" section
+  const isCertificateSection = title.trim() === "Certificate Program (Online)";
+
+  const headerStyles = isCertificateSection
+    ? {
+        backgroundColor: "#fff",
+        border: `2px solid #37c55e`,
+        color: "#37c55e",
+      }
+    : {
+        backgroundColor: color,
+        color: "#fff",
+      };
+
   return (
-    <section className="my-8">
-      <h2
-        className="text-2xl font-bold text-center py-2 mb-4 rounded-lg"
-        style={{ backgroundColor: color, color: "#fff" }}
-      >
-        {title}
-      </h2>
-      <div className="flex flex-wrap gap-6 justify-center">
-        {programs.map((program) => (
-          <ProgramCard
-            key={program._id}
-            image={program.image}
-            title={program.title}
-            duration={program.duration}
-            fees={program.fees}
-          />
-        ))}
+    <section className="my-12 flex justify-center">
+      <div className="w-full max-w-5xl">
+        <h2
+          className="text-3xl font-semibold text-center py-3 mb-8 rounded-2xl shadow"
+          style={headerStyles}
+        >
+          {title}
+        </h2>
+
+        <div className="flex flex-wrap gap-6 justify-center">
+          {programs.length > 0 ? (
+            programs.map((program) => (
+              <ProgramCard
+                key={program._id}
+                image={program.image}
+                title={program.title}
+                duration={program.duration}
+                fees={program.fees}
+              />
+            ))
+          ) : (
+            <p className="col-span-full text-center text-gray-500">
+              No programs available yet.
+            </p>
+          )}
+        </div>
       </div>
     </section>
   );
