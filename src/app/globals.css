@@ -139,3 +139,9 @@
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
+
+@layer components {
+  .clip-path-polygon {
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
+  }
+}
