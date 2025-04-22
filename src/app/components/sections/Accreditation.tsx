@@ -12,7 +12,7 @@ const AccreditationAndRanking = () => {
       </h2>
       <div className="h-1 w-11/12 sm:w-4/5 md:w-3/5 lg:w-2/5 bg-green-400 mx-auto mb-6 rounded-full" />
 
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center items-center border-b pb-10 border-green-400">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 justify-items-center items-center pb-10">
         {/* UGC */}
         <div className="text-center">
           <Image
