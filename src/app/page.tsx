@@ -4,18 +4,20 @@ import KiitxStructure from "./components/sections/Sec3";
 import VisionMission from "./components/sections/Sec4";
 import TopPrograms from "./components/sections/Sec5";
 import AlumniSection from "./components/sections/Sec6";
-import Ranking from "./components/sections/Sec7";
+// import Ranking from "./components/sections/Sec7";
+import AccreditationAndRanking from "./components/sections/Accreditation";
 
 export default function Home() {
   return (
     <div>
       <HomeCarousel />
+      <AccreditationAndRanking />
       <KIITXExtension />
       <KiitxStructure />
       <VisionMission />
       <TopPrograms />
       <AlumniSection />
-      <Ranking />
+      {/* <Ranking /> */}
       {/* <p>This is the search page.</p> */}
     </div>
   );
