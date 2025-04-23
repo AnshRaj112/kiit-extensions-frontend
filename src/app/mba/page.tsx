@@ -8,6 +8,7 @@ import Curriculum from "./components/Curriculum";
 import EligibilityMain from "./components/EligibilityMain";
 import FeeToggleCard from "./components/FeeToggleCard";
 import ScholarshipTable from "./components/ScholarshipTable";
+import AdmissionProcess from "./components/AdmissionProcess";
 
 
 export default function MBA() {
@@ -29,6 +30,7 @@ export default function MBA() {
       </div>
     </div>
     <ScholarshipTable />
+    <AdmissionProcess />
     </div>
   );
 }
