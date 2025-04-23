@@ -10,6 +10,7 @@ import { FeeInformation } from "./components/EMI/FeeInformation";
 import ScholarshipTable from "./components/ScholarshipTable";
 import AdmissionProcess from "./components/AdmissionProcess";
 import LearningJourney from "./components/LearningJourney";
+import CareerPaths from "./components/CareerPaths";
 import CertificateSection from "./components/CertificateSection";
 
 export default function MBA() {
@@ -28,6 +29,7 @@ export default function MBA() {
       <ScholarshipTable />
       <AdmissionProcess />
       <LearningJourney />
+      <CareerPaths />
       <CertificateSection />
     </div>
   );
