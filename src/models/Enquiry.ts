@@ -5,6 +5,7 @@ const enquirySchema = new mongoose.Schema({
   mobileNumber: { type: String, required: true },
   email: { type: String, required: true },
   city: { type: String, required: true },
+  courseInterested: { type: String, required: true},
   consent: { type: Boolean, default: false },
 }, { timestamps: true });
 

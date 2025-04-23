@@ -8,6 +8,7 @@ export default function EnquiryForm({ close }: { close: () => void }) {
     mobileNumber: "",
     email: "",
     city: "",
+    courseInterested: "",
     consent: true,
   });
 
@@ -46,7 +47,9 @@ export default function EnquiryForm({ close }: { close: () => void }) {
           &times;
         </button>
 
-        <h2 className="text-red-600 font-bold text-lg">Enter Your Details & Get Free Counselling</h2>
+        <h2 className="text-red-600 font-bold text-lg">
+          Enter Your Details & Get Free Counselling
+        </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
@@ -77,6 +80,13 @@ export default function EnquiryForm({ close }: { close: () => void }) {
             placeholder="Enter City*"
             className="w-full border p-2 rounded"
           />
+          <input
+            name="courseInterested"
+            onChange={handleChange}
+            required
+            placeholder="Enter Course You are Interested In*"
+            className="w-full border p-2 rounded"
+          />
 
           <label className="flex items-center space-x-2 text-sm">
             <input
@@ -88,7 +98,10 @@ export default function EnquiryForm({ close }: { close: () => void }) {
             <span>I agree to get updates from Academic Counsellor</span>
           </label>
 
-          <button type="submit" className="bg-red-600 text-white px-4 py-2 rounded w-full">
+          <button
+            type="submit"
+            className="bg-red-600 text-white px-4 py-2 rounded w-full"
+          >
             Submit
           </button>
         </form>
