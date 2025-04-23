@@ -12,6 +12,7 @@ import AdmissionProcess from "./components/AdmissionProcess";
 import LearningJourney from "./components/LearningJourney";
 import CareerPaths from "./components/CareerPaths";
 import CertificateSection from "./components/CertificateSection";
+import ContactForm from "./components/ContactForm";
 
 export default function MBA() {
   return (
@@ -31,6 +32,7 @@ export default function MBA() {
       <LearningJourney />
       <CareerPaths />
       <CertificateSection />
+      <ContactForm />
     </div>
   );
 }
