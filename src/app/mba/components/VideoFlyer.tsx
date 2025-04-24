@@ -63,7 +63,7 @@ const VideoFlyer: React.FC<VideoFlyerProps> = ({
           href="https://drive.google.com/uc?export=download&id=1kR29Qg-dVr9CN5kO3t_W9ZJsKQYTur4L"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 px-6 py-3 rounded-full font-medium text-white bg-gradient-to-r from-teal-500 to-green-400 hover:from-teal-600 hover:to-green-500 transition-all shadow-md"
+          className="flex items-center gap-2 px-6 py-3 rounded-full font-medium text-white bg-gradient-to-r from-[#0097b2] to-[#7ed952] hover:bg-gradient-to-r from-[#0097b2] to-[#7ed952] transition-all shadow-md"
         >
           <Download size={20} />
           Download Brochure
