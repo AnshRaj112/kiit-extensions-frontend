@@ -39,7 +39,7 @@ export function FeeInformation() {
         <div className="md:col-span-1">
           <div className="border border-gray-200 rounded-lg p-4 h-full flex items-center justify-center">
             <img 
-              src="/lovable-uploads/fd1b9940-49fe-4644-bd7e-4bd65362eca5.png" 
+              src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1742974664/samples/breakfast.jpg" 
               alt="Education and fees illustration" 
               className="max-w-full h-auto"
             />

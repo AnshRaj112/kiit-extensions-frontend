@@ -1,7 +1,9 @@
 "use client";
 
 import { Mail, Phone, User, Building2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactForm() {
   const [form, setForm] = useState({
@@ -11,6 +13,20 @@ export default function ContactForm() {
     city: "",
     courseInterested: "",
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [cooldownTime, setCooldownTime] = useState(0);
+
+  // Cooldown timer effect
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (cooldownTime > 0) {
+      timer = setInterval(() => {
+        setCooldownTime((prev) => prev - 1);
+      }, 1000);
+    }
+    return () => clearInterval(timer);
+  }, [cooldownTime]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -22,17 +38,38 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await fetch("/api/enquiry", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
-
-    if (res.ok) {
-      alert("Submitted successfully!");
-    } else {
-      alert("Failed to submit");
+    if (cooldownTime > 0) {
+      toast.warn("Please wait before submitting again.");
+      return;
     }
+
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (res.ok) {
+        toast.success("Submitted successfully!");
+        setForm({
+          fullName: "",
+          mobileNumber: "",
+          email: "",
+          city: "",
+          courseInterested: "",
+        });
+        setCooldownTime(10); // 2 minutes
+      } else {
+        toast.error("Submission failed. Please try again.");
+      }
+    } catch {
+      toast.error("An error occurred.");
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -144,12 +181,24 @@ export default function ContactForm() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-green-400 hover:bg-green-500 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+            className={`w-full text-white font-semibold py-2 px-4 rounded-lg transition-colors ${
+              cooldownTime > 0 || isSubmitting
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-green-400 hover:bg-green-500"
+            }`}
+            disabled={cooldownTime > 0 || isSubmitting}
           >
-            Submit
+            {cooldownTime > 0
+              ? `Please wait ${cooldownTime}s`
+              : isSubmitting
+              ? "Submitting..."
+              : "Submit"}
           </button>
         </form>
       </div>
+
+      {/* Toast notification container */}
+      <ToastContainer position="bottom-right" />
     </div>
   );
 }
