@@ -30,7 +30,7 @@ const SpecializationTabs = ({
           className={cn(
             "py-4 px-6 text-center font-medium text-lg md:text-xl transition-all flex-1 rounded-t-md md:rounded-l-md md:rounded-tr-none",
             activeTab === "accounting"
-              ? "bg-teal-500 text-white"
+              ? "bg-gradient-to-r from-[#0097b2] to-[#7ed952] text-white"
               : "bg-white border border-gray-200 hover:bg-gray-50 text-gray-700"
           )}
         >
@@ -41,7 +41,7 @@ const SpecializationTabs = ({
           className={cn(
             "py-4 px-6 text-center font-medium text-lg md:text-xl transition-all flex-1 rounded-b-md md:rounded-r-md md:rounded-bl-none",
             activeTab === "marketing"
-              ? "bg-green-500 text-white"
+              ? "bg-gradient-to-l from-[#0097b2] to-[#7ed952] text-white"
               : "bg-white border border-gray-200 hover:bg-gray-50 text-gray-700"
           )}
         >

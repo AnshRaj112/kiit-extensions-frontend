@@ -15,7 +15,7 @@ export function StudentTypeToggle({ activeType, onToggle }: StudentTypeTogglePro
         className={cn(
           "py-3 px-8 text-center transition-colors font-medium",
           activeType === 'indian' 
-            ? "bg-green-500 text-white" 
+            ? "bg-gradient-to-r from-[#0097b2] to-[#7ed952] text-white" 
             : "bg-white text-green-600 hover:bg-gray-50"
         )}
       >
@@ -26,7 +26,7 @@ export function StudentTypeToggle({ activeType, onToggle }: StudentTypeTogglePro
         className={cn(
           "py-3 px-8 text-center transition-colors font-medium",
           activeType === 'international' 
-            ? "bg-green-500 text-white" 
+            ? "bg-gradient-to-l from-[#0097b2] to-[#7ed952] text-white" 
             : "bg-white text-green-600 hover:bg-gray-50 border-l"
         )}
       >
