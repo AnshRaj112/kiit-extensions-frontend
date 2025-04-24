@@ -43,7 +43,7 @@ const ProcessStep: React.FC<ProcessStepProps> = ({
 
 const AdmissionProcess: React.FC = () => {
   return (
-    <div className="container mx-auto py-10 px-4">
+    <div className="container max-w-7xl mx-auto py-10 px-4">
       <h1 className="text-3xl md:text-4xl font-bold text-emerald-500 mb-6 pb-2 border-b-4 border-emerald-500 inline-block">
         Admission Process
       </h1>

@@ -148,7 +148,7 @@ const Hero = () => {
 
       {/* Program Details Section */}
       <div className="py-6 bg-white">
-        <div className="container mx-auto px-4">
+        <div className="container max-w-[1320px] mx-auto px-4">
           <div className="border-2 border-green-400 rounded-lg overflow-hidden">
             <div className="flex flex-wrap divide-y md:divide-y-0 md:divide-x divide-green-400">
               {/* Duration */}

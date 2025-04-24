@@ -2,7 +2,7 @@
 
 import { Mail, Phone, User, Building2 } from "lucide-react";
 import { useState, useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function ContactForm() {
@@ -17,7 +17,6 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [cooldownTime, setCooldownTime] = useState(0);
 
-  // Cooldown timer effect
   useEffect(() => {
     let timer: NodeJS.Timeout;
     if (cooldownTime > 0) {
@@ -61,7 +60,7 @@ export default function ContactForm() {
           city: "",
           courseInterested: "",
         });
-        setCooldownTime(10); // 2 minutes
+        setCooldownTime(10);
       } else {
         toast.error("Submission failed. Please try again.");
       }
@@ -74,117 +73,136 @@ export default function ContactForm() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-white p-4">
-      <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 w-full max-w-md">
-        <div className="bg-green-400 rounded-xl p-6 mb-6 text-center">
+      <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 w-full max-w-2xl">
+        <div className="bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-xl p-6 mb-6 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white">
             Interested in Learning with Us?
           </h2>
         </div>
 
-        <p className="text-center text-green-700 mb-8">
+        <p className="text-center text-[#0097b2] mb-8 font-medium">
           Please share your information below, and we&apos;ll be in touch soon!
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Name */}
-          <div className="space-y-2">
-            <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
-              Your Name
-            </label>
-            <div className="relative">
-              <input
-                type="text"
-                id="fullName"
-                name="fullName"
-                value={form.fullName}
-                onChange={handleChange}
-                placeholder="Enter your name"
-                className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
-              />
-              <User className="absolute left-3 top-2.5 h-5 w-5 text-green-500" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Full Name */}
+            <div className="space-y-2">
+              <label
+                htmlFor="fullName"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Your Name
+              </label>
+              <div className="relative focus-within:shadow-[0_0_10px_2px_rgba(0,151,178,0.6),0_0_20px_4px_rgba(126,217,82,0.6)] rounded-lg transition-shadow">
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  value={form.fullName}
+                  onChange={handleChange}
+                  placeholder="Enter your name"
+                  className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-0 focus:border-transparent"
+                />
+                <User className="absolute left-3 top-2.5 h-5 w-5 text-[#0097b2]" />
+              </div>
             </div>
-          </div>
 
-          {/* Email */}
-          <div className="space-y-2">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-              Email Address
-            </label>
-            <div className="relative">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="Enter your email"
-                className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
-              />
-              <Mail className="absolute left-3 top-2.5 h-5 w-5 text-green-500" />
+            {/* Email */}
+            <div className="space-y-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Email Address
+              </label>
+              <div className="relative focus-within:shadow-[0_0_10px_2px_rgba(0,151,178,0.6),0_0_20px_4px_rgba(126,217,82,0.6)] rounded-lg transition-shadow">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                  className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-0 focus:border-transparent"
+                />
+                <Mail className="absolute left-3 top-2.5 h-5 w-5 text-[#0097b2]" />
+              </div>
             </div>
-          </div>
 
-          {/* Phone */}
-          <div className="space-y-2">
-            <label htmlFor="mobileNumber" className="block text-sm font-medium text-gray-700">
-              Phone Number
-            </label>
-            <div className="relative">
-              <input
-                type="tel"
-                id="mobileNumber"
-                name="mobileNumber"
-                value={form.mobileNumber}
-                onChange={handleChange}
-                placeholder="Enter your phone number"
-                className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
-              />
-              <Phone className="absolute left-3 top-2.5 h-5 w-5 text-green-500" />
+            {/* Phone */}
+            <div className="space-y-2">
+              <label
+                htmlFor="mobileNumber"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Phone Number
+              </label>
+              <div className="relative focus-within:shadow-[0_0_10px_2px_rgba(0,151,178,0.6),0_0_20px_4px_rgba(126,217,82,0.6)] rounded-lg transition-shadow">
+                <input
+                  type="tel"
+                  id="mobileNumber"
+                  name="mobileNumber"
+                  value={form.mobileNumber}
+                  onChange={handleChange}
+                  placeholder="Enter your phone number"
+                  className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-0 focus:border-transparent"
+                />
+                <Phone className="absolute left-3 top-2.5 h-5 w-5 text-[#0097b2]" />
+              </div>
             </div>
-          </div>
 
-          {/* City */}
-          <div className="space-y-2">
-            <label htmlFor="city" className="block text-sm font-medium text-gray-700">
-              City
-            </label>
-            <div className="relative">
-              <input
-                type="text"
-                id="city"
-                name="city"
-                value={form.city}
-                onChange={handleChange}
-                placeholder="Enter your City*"
-                className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
-              />
-              <Building2 className="absolute left-3 top-2.5 h-5 w-5 text-green-500" />
+            {/* City */}
+            <div className="space-y-2">
+              <label
+                htmlFor="city"
+                className="block text-sm font-medium text-gray-700"
+              >
+                City
+              </label>
+              <div className="relative focus-within:shadow-[0_0_10px_2px_rgba(0,151,178,0.6),0_0_20px_4px_rgba(126,217,82,0.6)] rounded-lg transition-shadow">
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  value={form.city}
+                  onChange={handleChange}
+                  placeholder="Enter your City"
+                  className="w-full pl-10 pr-3 py-2 border rounded-lg focus:outline-none focus:ring-0 focus:border-transparent"
+                />
+                <Building2 className="absolute left-3 top-2.5 h-5 w-5 text-[#0097b2]" />
+              </div>
             </div>
           </div>
 
           {/* Program */}
           <div className="space-y-2">
-            <label htmlFor="courseInterested" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="courseInterested"
+              className="block text-sm font-medium text-gray-700"
+            >
               Program of Interest
             </label>
-            <input
-              type="text"
-              id="courseInterested"
-              name="courseInterested"
-              value={form.courseInterested}
-              onChange={handleChange}
-              placeholder="Enter program name"
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
-            />
+            <div className="relative focus-within:shadow-[0_0_10px_2px_rgba(0,151,178,0.6),0_0_20px_4px_rgba(126,217,82,0.6)] rounded-lg transition-shadow">
+              <input
+                type="text"
+                id="courseInterested"
+                name="courseInterested"
+                value={form.courseInterested}
+                onChange={handleChange}
+                placeholder="Enter program name"
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-0 focus:border-transparent"
+              />
+            </div>
           </div>
 
           {/* Submit Button */}
           <button
             type="submit"
-            className={`w-full text-white font-semibold py-2 px-4 rounded-lg transition-colors ${
+            className={`w-full text-white font-semibold py-2 px-4 rounded-lg transition-all ${
               cooldownTime > 0 || isSubmitting
                 ? "bg-gray-400 cursor-not-allowed"
-                : "bg-green-400 hover:bg-green-500"
+                : "bg-gradient-to-r from-[#0097b2] to-[#7ed952] hover:brightness-110"
             }`}
             disabled={cooldownTime > 0 || isSubmitting}
           >
@@ -197,8 +215,19 @@ export default function ContactForm() {
         </form>
       </div>
 
-      {/* Toast notification container */}
-      <ToastContainer position="bottom-right" />
+      {/* Toast Notification Container */}
+      <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        closeOnClick
+        pauseOnHover
+        draggable
+        theme="light"
+        transition={Slide}
+        toastClassName="bg-white text-black rounded shadow-md"
+        progressClassName="bg-gradient-to-r from-[#0097b2] to-[#7ed952]"
+      />
     </div>
   );
 }
