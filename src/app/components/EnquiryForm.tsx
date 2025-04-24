@@ -69,7 +69,7 @@ export default function EnquiryForm({ close }: { close: () => void }) {
       } else {
         toast.error("Failed to submit. Please try again.");
       }
-    } catch (error) {
+    } catch {
       toast.error("An error occurred. Please try later.");
     }
 
