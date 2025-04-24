@@ -1,13 +1,13 @@
 import React from "react";
 import FeatureCard from "./FeatureCard";
-import { 
-  CircleDot, 
+import {
   CircleUser, 
   CircleCheck, 
   CirclePlus, 
-  CircleMinus, 
-  CircleX,
-  Circle
+  CircleMinus,
+  LibraryBig,
+  Globe,
+  BrainCircuit 
 } from "lucide-react";
 
 const FeatureSection = () => {
@@ -17,7 +17,7 @@ const FeatureSection = () => {
       description: "AI Driven Technology for online learning.",
       gradientFrom: "#0CC7E0",
       gradientTo: "#065BBB",
-      icon: <CircleDot className="w-8 h-8 text-blue-500" />
+      icon: <BrainCircuit className="w-8 h-8 text-blue-500" />
     },
     {
       title: "Learning Resources",
@@ -31,7 +31,7 @@ const FeatureSection = () => {
             description: "Receive your study books delivered directly to your doorstep.",
             gradientFrom: "#0CC7E0",
             gradientTo: "#DCFF6B",
-            icon: <CircleX className="w-8 h-8 text-teal-500" />
+            icon: <LibraryBig className="w-8 h-8 text-teal-500" />
     },
     {
       title: "Campus Immersion",
@@ -45,7 +45,7 @@ const FeatureSection = () => {
       description: "Benefit from lifelong connections with over 100,000+ successful alumni worldwide.",
       gradientFrom: "#FFCC33",
       gradientTo: "#FF6B95",
-      icon: <Circle className="w-8 h-8 text-pink-500" />
+      icon: <Globe  className="w-8 h-8 text-pink-500" />
     },
     {
       title: "24/7 Support",

@@ -50,14 +50,19 @@ const ScholarshipTable: React.FC = () => {
 
   return (
     <div className="w-full max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-3xl sm:text-4xl font-bold text-green-500 mb-2">
+      <h1 className="text-4xl sm:text-4xl font-bold text-green-500 mb-2">
         Scholarship & Concession
       </h1>
       <div className="w-full h-1 bg-gradient-to-r from-green-500 to-green-400 mb-8"></div>
 
       {/* Scholarship Table */}
       <div className="overflow-x-auto mb-8">
-        <table className="min-w-full border border-gray-200">
+        <table className="min-w-full table-fixed border border-gray-200">
+          <colgroup>
+            <col className="w-1/3" />
+            <col className="w-1/3" />
+            <col className="w-1/3" />
+          </colgroup>
           <thead>
             <tr>
               <th className="bg-green-500 text-white px-4 py-3 text-left border">
@@ -85,7 +90,12 @@ const ScholarshipTable: React.FC = () => {
 
       {/* Concession Table */}
       <div className="overflow-x-auto">
-        <table className="min-w-full border border-gray-200">
+        <table className="min-w-full table-fixed border border-gray-200">
+          <colgroup>
+            <col className="w-1/3" />
+            <col className="w-1/3" />
+            <col className="w-1/3" />
+          </colgroup>
           <thead>
             <tr>
               <th className="bg-green-500 text-white px-4 py-3 text-left border">

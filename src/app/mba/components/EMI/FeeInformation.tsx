@@ -32,7 +32,7 @@ export function FeeInformation() {
   
   return (
     <div className="max-w-7xl mx-auto px-4">
-      <h1 className="text-3xl font-bold text-green-500 mb-4">Fee</h1>
+      <h1 className="text-4xl font-bold text-green-500 mb-4">Fee</h1>
       <div className="h-1 w-full bg-gradient-to-r from-green-400 to-teal-500 mb-8"></div>
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
