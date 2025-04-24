@@ -2,7 +2,7 @@ import React from "react";
 
 const Foot: React.FC = () => {
   return (
-    <div className="flex flex-col md:flex-row flex-wrap text-base w-full bg-[#548235] text-white p-4">
+    <div className="flex flex-col md:flex-row flex-wrap text-base w-full bg-gradient-to-r from-[#0097b2] to-[#7ed952] text-white p-4">
       {/* Academic Programs */}
       <div className="flex flex-col w-full md:w-1/2 lg:w-1/4 p-4">
         <h3 className="font-semibold mb-2">Academic Programs</h3>

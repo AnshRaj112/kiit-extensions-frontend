@@ -141,7 +141,7 @@ const Hero = () => {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-center text-[#2d3748] mt-10">
-            Masters of Commerce
+            Master of Commerce
           </h2>
         </div>
       </div>

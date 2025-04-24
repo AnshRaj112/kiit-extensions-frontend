@@ -1,5 +1,12 @@
 import React from "react";
-import { BookOpen, Briefcase, Calendar, GraduationCap, CircleDollarSign, Clock } from "lucide-react";
+import {
+  BookOpen,
+  Briefcase,
+  Calendar,
+  GraduationCap,
+  CircleDollarSign,
+  Clock,
+} from "lucide-react";
 
 interface StatItemProps {
   icon: React.ReactNode;
@@ -10,7 +17,7 @@ interface StatItemProps {
 const StatItem = ({ icon, value, label }: StatItemProps) => {
   return (
     <div className="flex flex-col items-center mb-6 md:mb-0">
-      <div className="w-20 h-20 md:w-24 md:h-24 bg-green-500 rounded-full flex items-center justify-center text-white mb-2">
+      <div className="w-16 h-16 md:w-20 md:h-20 bg-white border-2 border-green-500 rounded-full flex items-center justify-center text-green-500 mb-2">
         {icon}
       </div>
       <div className="text-center">
@@ -24,32 +31,32 @@ const StatItem = ({ icon, value, label }: StatItemProps) => {
 const ProgramStats = () => {
   const stats = [
     {
-      icon: <CircleDollarSign size={36} />,
+      icon: <CircleDollarSign size={28} />,
       value: "80 credits",
       label: "Total Credits",
     },
     {
-      icon: <BookOpen size={36} />,
+      icon: <BookOpen size={28} />,
       value: "23 Courses",
       label: "Total Courses",
     },
     {
-      icon: <Briefcase size={36} />,
+      icon: <Briefcase size={28} />,
       value: "1 Internship",
       label: "Industry Experience",
     },
     {
-      icon: <GraduationCap size={36} />,
+      icon: <GraduationCap size={28} />,
       value: "1 Capstone Project",
       label: "Final Project",
     },
     {
-      icon: <Clock size={36} />,
+      icon: <Clock size={28} />,
       value: "24 months",
       label: "Program Duration",
     },
     {
-      icon: <Calendar size={36} />,
+      icon: <Calendar size={28} />,
       value: "4 semesters",
       label: "Academic Terms",
     },
