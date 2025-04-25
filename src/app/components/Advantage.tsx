@@ -2,7 +2,7 @@ import React from "react";
 import { 
   BookOpen, 
   Clock, 
-  LifeBuoy, 
+  Scale, 
   PiggyBank, 
   KeyRound 
 } from "lucide-react";
@@ -28,7 +28,7 @@ const KeyAdvantages: React.FC = () => {
       description: "Weekend/ off-work hours classes fostering learn while your work concept of Education 4.0",
       color: "bg-rose-600",
       borderColor: "border-rose-700",
-      icon: <LifeBuoy className="h-10 w-10 text-rose-800" />,
+      icon: <Scale className="h-10 w-10 text-rose-800" />,
     },
     {
       title: "Save Time & Money",
