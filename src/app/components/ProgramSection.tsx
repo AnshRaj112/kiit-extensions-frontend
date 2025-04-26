@@ -43,7 +43,6 @@ const ProgramSection: React.FC<SectionProps> = ({
     fetchPrograms();
   }, [category]);
 
-  // Check if it's the "Certificate Program (Online)" section
   const isCertificateSection = title.trim() === "Certificate Program (Online)";
 
   const headerStyles = isCertificateSection
@@ -61,7 +60,7 @@ const ProgramSection: React.FC<SectionProps> = ({
     <section className="my-12 flex justify-center">
       <div className="w-full max-w-5xl">
         <h2
-          className="text-3xl font-semibold text-center py-3 mb-8 rounded-2xl shadow"
+          className="text-2xl font-medium text-center py-2 mb-6 rounded-2xl shadow"
           style={headerStyles}
         >
           {title}

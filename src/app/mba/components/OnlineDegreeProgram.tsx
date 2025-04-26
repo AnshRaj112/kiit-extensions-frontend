@@ -17,7 +17,7 @@ const OnlineDegreeProgram: React.FC = () => {
           {/* Program Overview Section */}
           <div className="mb-8">
             <h2 className="text-[#00a86b] text-2xl md:text-3xl font-semibold mb-2">Program Overview</h2>
-            <div className="w-full h-[2px] bg-[#00a86b] mb-6"></div>
+            <div className="h-1 bg-green-500 w-full md:w-[25%] mt-2"></div>
             
             <p className="mb-4 text-gray-800">
               An online M.Com (Master of Commerce) is a postgraduate degree program in commerce delivered entirely online. The program equips students with 
@@ -33,7 +33,7 @@ const OnlineDegreeProgram: React.FC = () => {
           {/* Objective Section */}
           <div>
             <h2 className="text-[#00a86b] text-2xl md:text-3xl font-semibold mb-2">Objective</h2>
-            <div className="w-full h-[2px] bg-[#00a86b] mb-6"></div>
+            <div className="h-1 bg-green-500 w-full md:w-[25%] mt-2"></div>
             
             <ul className="list-disc pl-6 space-y-2 text-gray-800">
               <li>To equip students with comprehensive and pragmatic knowledge in the field of Commerce.</li>

@@ -126,7 +126,7 @@ const KiiTX = () => {
       {/* Header */}
       <div className="text-center mb-10">
         <h1 className="text-3xl sm:text-4xl font-bold text-green-700">KiiTX</h1>
-        <div className="h-1 mx-auto my-6 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-3/4 sm:w-2/3 md:w-1/2 lg:w-1/3" />
+        <div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-1/2 md:w-1/3" />
         <p className="mt-4 text-gray-700 max-w-3xl mx-auto text-sm sm:text-base">
           <strong>KiiT eXtension School (KiiTX)</strong> extends individuals&apos; learning horizons by providing opportunities to pursue flexible, accessible & affordable higher education in online or hybrid mode culminating in the form of certificates and degrees.
         </p>
@@ -135,23 +135,22 @@ const KiiTX = () => {
       {/* Building Layout */}
       <div className="flex flex-col items-center gap-6">
         {/* Roof */}
-        <div className="relative w-full max-w-6xl">
+        <div className="relative w-full max-w-5xl">
           <div className="w-full h-0 pb-[18%] bg-gray-300 clip-roof"></div>
           <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-gray-500 aspect-square w-12 md:w-16 lg:w-20"></div>
         </div>
 
         {/* Pillars */}
-        <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((pillar, index) => (
             <Pillar key={index} {...pillar} />
           ))}
         </div>
 
         {/* Foundation */}
-        <div className="w-full max-w-6xl mt-6">
+        <div className="w-full max-w-5xl mt-6">
           <div className="h-6 md:h-8 bg-gray-300 rounded-lg mb-2" />
           <div className="h-4 sm:h-5 md:h-6 w-[105%] sm:w-[110%] md:w-[115%] -mx-[2.5%] sm:-mx-[5%] md:-mx-[7.5%] bg-gray-300 rounded-lg" />
-
         </div>
       </div>
     </div>

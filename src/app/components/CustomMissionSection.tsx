@@ -64,11 +64,11 @@ const CustomMissionSection = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 overflow-hidden">
+    <div className="max-w-5xl mx-auto px-4 py-12 overflow-hidden">
       {/* Title with underline */}
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-green-700 mb-2">Mission</h2>
-        <div className="h-1 mx-auto my-6 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-3/4 sm:w-2/3 md:w-1/2 lg:w-1/3" />
+        <div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-1/2 md:w-1/3" />
       </div>
 
       {/* Mission cards grid */}
@@ -130,13 +130,13 @@ const CustomMissionSection = () => {
         <div
           className="absolute h-1 mx-auto left-[10%] right-[10%] timeline-line"
           style={{
-            backgroundColor: "#20b8e3",
+            backgroundImage: "linear-gradient(to right, #0097b2, #7ed952)",
             width: "80%",
             marginTop: "-11.5px",
             top: "10%",
             transform: "translateY(-50%)",
             zIndex: 0,
-          }}
+          }}          
         />
       </div>
     </div>

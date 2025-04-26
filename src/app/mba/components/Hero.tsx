@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="relative">
         <div className="w-full h-[500px] overflow-hidden">
           <img
-            src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1742974667/cld-sample-5.jpg"
+            src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745672130/0e81c71e-f8ea-40ec-9d90-9ceec6f14026.png"
             alt="Student studying online"
             className="w-full h-full object-cover"
           />

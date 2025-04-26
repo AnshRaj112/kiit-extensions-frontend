@@ -47,11 +47,11 @@ const KeyAdvantages: React.FC = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12 max-w-6xl">
+    <div className="container mx-auto px-4 py-12 max-w-5xl">
       <h1 className="text-4xl font-bold text-center text-green-700 mb-4">
         KiiTX: Key Advantages
       </h1>
-      <div className="h-1 mx-auto my-6 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-3/4 sm:w-2/3 md:w-1/2 lg:w-1/3" />
+      <div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-1/2 md:w-1/3" />
       {/* <div className="flex justify-center mb-10">
         <div className="h-1 bg-green-500 w-1/3"></div>
       </div> */}

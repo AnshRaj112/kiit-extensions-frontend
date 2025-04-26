@@ -57,11 +57,11 @@ const AlumniSection = () => {
   };
 
   return (
-    <div className="w-full flex flex-col mx-auto max-w-6xl items-center bg-white-50 py-12">
+    <div className="w-full flex flex-col mx-auto max-w-5xl items-center bg-white-50 py-12">
       <h1 className="text-4xl font-bold text-center text-green-700 mb-4">
         Where Our Alumni Work
       </h1>
-      <div className="h-1 mx-auto my-6 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-3/4 sm:w-2/3 md:w-1/2 lg:w-1/3" />
+      <div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-1/2 md:w-1/3" />
       <div className="w-full max-w-7xl px-8">
         <Slider {...sliderSettings}>
           {companyLogos.map((logo, idx) => (
