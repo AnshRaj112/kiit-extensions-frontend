@@ -130,7 +130,7 @@ const CustomMissionSection = () => {
         <div
           className="absolute h-1 mx-auto left-[10%] right-[10%] timeline-line"
           style={{
-            backgroundColor: "#20b8e3", // lowered line
+            backgroundColor: "#20b8e3",
             width: "80%",
             marginTop: "-11.5px",
             top: "10%",

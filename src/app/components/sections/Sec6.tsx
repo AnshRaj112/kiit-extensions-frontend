@@ -33,20 +33,23 @@ const AlumniSection = () => {
   };
 
   return (
-    <div className="w-full flex flex-col items-center bg-white-50 py-12">
-      <h2 className="text-3xl font-bold text-green-700 mb-2">
+    <div className="w-full flex flex-col items-center bg-white-50 py-16">
+      <h2 className="text-4xl font-bold text-green-700 mb-4">
         Companies where our Alumni work
       </h2>
-      <div className="w-24 border-t-2 border-green-400 mb-6"></div>
-      <div className="w-full max-w-6xl px-4">
+      <div className="w-32 border-t-4 border-green-400 mb-8"></div>
+      <div className="w-full max-w-7xl px-8">
         <Slider {...sliderSettings}>
           {companyLogos.map((logo, idx) => (
-            <div key={idx} className="px-4">
-              <div className="bg-white rounded-2xl shadow-md h-28 flex items-center justify-center p-4">
+            <div
+              key={idx}
+              className="px-8 py-6 flex items-center justify-center" // Enlarged outer div
+            >
+              <div className="bg-white rounded-3xl shadow-lg h-40 w-full max-w-[250px] flex items-center justify-center p-6">
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  className="max-h-12 object-contain"
+                  className="max-h-20 object-contain"
                 />
               </div>
             </div>
