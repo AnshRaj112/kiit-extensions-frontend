@@ -76,13 +76,6 @@ const Hero = () => {
                 alt="KIIT"
                 className="h-16 md:h-20"
               />
-              {/* <div className="text-xs ml-1 max-w-[160px] text-green-600">
-                <div className="font-bold">Kalinga Institute</div>
-                <div>Of Industrial Technology</div>
-                <div className="text-gray-500 italic text-[10px]">
-                  Deemed to be University
-                </div>
-              </div> */}
             </div>
 
             {/* UGC */}

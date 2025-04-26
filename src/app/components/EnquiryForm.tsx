@@ -17,7 +17,6 @@ export default function EnquiryForm({ close }: { close: () => void }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [cooldown, setCooldown] = useState(0); // in seconds
 
-  // Handle cooldown timer
   useEffect(() => {
     if (cooldown > 0) {
       const timer = setInterval(() => {
@@ -29,7 +28,7 @@ export default function EnquiryForm({ close }: { close: () => void }) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, checked, type } = e.target;
-    if (cooldown > 0) return; // Don't allow edits during cooldown
+    if (cooldown > 0) return;
     setForm((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
@@ -64,7 +63,7 @@ export default function EnquiryForm({ close }: { close: () => void }) {
         });
         setCooldown(120); // 2 minutes
         setTimeout(() => {
-          close(); // Close modal after toast
+          close();
         }, 1000);
       } else {
         toast.error("Failed to submit. Please try again.");
@@ -79,19 +78,19 @@ export default function EnquiryForm({ close }: { close: () => void }) {
   return (
     <div className="fixed inset-0 bg-black/40 z-[999] flex justify-center items-center">
       <ToastContainer />
-      <div className="relative bg-white p-6 rounded-md w-80 shadow-lg space-y-4">
+      <div className="relative bg-white p-8 rounded-md w-[450px] shadow-lg space-y-6">
         <button
           onClick={close}
-          className="absolute top-2 right-2 text-gray-600 hover:text-black text-xl font-bold"
+          className="absolute top-2 right-2 text-gray-600 hover:text-black text-2xl font-bold"
         >
           &times;
         </button>
 
-        <h2 className="text-red-600 font-bold text-lg">
+        <h2 className="text-green-700 font-bold text-2xl text-center">
           Enter Your Details & Get Free Counselling
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <input
             name="fullName"
             value={form.fullName}
@@ -99,7 +98,7 @@ export default function EnquiryForm({ close }: { close: () => void }) {
             required
             disabled={cooldown > 0}
             placeholder="Full Name*"
-            className="w-full border p-2 rounded disabled:opacity-50"
+            className="w-full border p-3 rounded disabled:opacity-50"
           />
           <input
             name="mobileNumber"
@@ -108,7 +107,7 @@ export default function EnquiryForm({ close }: { close: () => void }) {
             required
             disabled={cooldown > 0}
             placeholder="Mobile Number*"
-            className="w-full border p-2 rounded disabled:opacity-50"
+            className="w-full border p-3 rounded disabled:opacity-50"
           />
           <input
             name="email"
@@ -117,7 +116,7 @@ export default function EnquiryForm({ close }: { close: () => void }) {
             required
             disabled={cooldown > 0}
             placeholder="Email*"
-            className="w-full border p-2 rounded disabled:opacity-50"
+            className="w-full border p-3 rounded disabled:opacity-50"
           />
           <input
             name="city"
@@ -126,7 +125,7 @@ export default function EnquiryForm({ close }: { close: () => void }) {
             required
             disabled={cooldown > 0}
             placeholder="Enter City*"
-            className="w-full border p-2 rounded disabled:opacity-50"
+            className="w-full border p-3 rounded disabled:opacity-50"
           />
           <input
             name="courseInterested"
@@ -135,7 +134,7 @@ export default function EnquiryForm({ close }: { close: () => void }) {
             required
             disabled={cooldown > 0}
             placeholder="Enter Course You are Interested In*"
-            className="w-full border p-2 rounded disabled:opacity-50"
+            className="w-full border p-3 rounded disabled:opacity-50"
           />
 
           <label className="flex items-center space-x-2 text-sm">
@@ -152,7 +151,7 @@ export default function EnquiryForm({ close }: { close: () => void }) {
           <button
             type="submit"
             disabled={isSubmitting || cooldown > 0}
-            className="bg-red-600 text-white px-4 py-2 rounded w-full disabled:opacity-60"
+            className="bg-gradient-to-r from-[#0097b2] to-[#7ed952] text-white px-6 py-3 rounded w-full disabled:opacity-60 font-semibold"
           >
             {cooldown > 0
               ? `Wait ${cooldown}s`

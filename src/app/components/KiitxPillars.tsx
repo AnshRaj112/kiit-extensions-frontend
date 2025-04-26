@@ -31,7 +31,7 @@ const Pillar = ({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="flex flex-col w-full h-full bg-white border rounded shadow-md overflow-hidden">
+    <div className="flex flex-col w-full h-full bg-white border rounded shadow-md overflow-hidden hover:shadow-lg transition-all duration-300">
       {/* Logo Circle */}
       <div className="flex justify-center items-center py-5 bg-gray-200">
         <a
@@ -43,7 +43,7 @@ const Pillar = ({
           className="relative"
         >
           <div
-            className="w-16 h-16 rounded-full border border-gray-400 flex items-center justify-center overflow-hidden transition-all duration-300"
+            className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-gray-400 flex items-center justify-center overflow-hidden transition-all duration-300"
             style={{ opacity: isHovered ? 0.9 : 1 }}
           >
             {logoIndex > 0 ? (
@@ -69,13 +69,13 @@ const Pillar = ({
 
       {/* Title & Subtitle */}
       <div className={`${colorClass} py-4 px-3 text-center text-white`}>
-        <h2 className="text-xl font-bold">{title}</h2>
-        <p className="text-sm mt-1">{subtitle}</p>
+        <h2 className="text-lg md:text-xl font-bold">{title}</h2>
+        <p className="text-xs md:text-sm mt-1">{subtitle}</p>
       </div>
 
       {/* Description */}
       <div className="flex-grow bg-gray-100 p-4 text-center flex items-center justify-center">
-        <p className="text-sm text-gray-800 leading-relaxed">{description}</p>
+        <p className="text-xs md:text-sm text-gray-800 leading-relaxed">{description}</p>
       </div>
     </div>
   );
@@ -125,38 +125,33 @@ const KiiTX = () => {
     <div className="min-h-screen bg-white p-4">
       {/* Header */}
       <div className="text-center mb-10">
-        <h1 className="text-4xl font-bold text-green-500">KiiTX</h1>
-        <div className="h-1 mx-auto mt-2 bg-gradient-to-r from-cyan-500 to-green-400 rounded-full w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5" />
-        <p className="mt-4 text-gray-700 max-w-2xl mx-auto text-sm sm:text-base text-center">
-          <span className="whitespace-wrap">
-            <strong>KiiT eXtension School (KiiTX)</strong> extends individual’s
-            learning horizons by providing opportunities to pursue flexible,
-            accessible & affordable higher education in online or hybrid mode
-            culminating in
-          </span>
-          <span>the form of certificates and degrees.</span>
+        <h1 className="text-3xl sm:text-4xl font-bold text-green-700">KiiTX</h1>
+        <div className="h-1 mx-auto my-6 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-3/4 sm:w-2/3 md:w-1/2 lg:w-1/3" />
+        <p className="mt-4 text-gray-700 max-w-3xl mx-auto text-sm sm:text-base">
+          <strong>KiiT eXtension School (KiiTX)</strong> extends individuals&apos; learning horizons by providing opportunities to pursue flexible, accessible & affordable higher education in online or hybrid mode culminating in the form of certificates and degrees.
         </p>
       </div>
 
       {/* Building Layout */}
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-6">
         {/* Roof */}
-        <div className="relative w-full max-w-5xl">
+        <div className="relative w-full max-w-6xl">
           <div className="w-full h-0 pb-[18%] bg-gray-300 clip-roof"></div>
-          <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-gray-500 aspect-square w-[12%] max-w-20 min-w-10"></div>
+          <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-gray-500 aspect-square w-12 md:w-16 lg:w-20"></div>
         </div>
 
         {/* Pillars */}
-        <div className="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pillars.map((pillar, index) => (
             <Pillar key={index} {...pillar} />
           ))}
         </div>
 
         {/* Foundation */}
-        <div className="w-full max-w-5xl mt-4">
-          <div className="h-8 bg-gray-300 rounded-lg mb-2" />
-          <div className="h-6 w-[110%] -mx-[5%] bg-gray-300 rounded-lg" />
+        <div className="w-full max-w-6xl mt-6">
+          <div className="h-6 md:h-8 bg-gray-300 rounded-lg mb-2" />
+          <div className="h-4 sm:h-5 md:h-6 w-[105%] sm:w-[110%] md:w-[115%] -mx-[2.5%] sm:-mx-[5%] md:-mx-[7.5%] bg-gray-300 rounded-lg" />
+
         </div>
       </div>
     </div>

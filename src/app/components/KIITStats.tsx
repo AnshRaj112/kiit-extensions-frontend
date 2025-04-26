@@ -52,8 +52,8 @@ const stats = [
 export default function KIITStats() {
   return (
     <div className="w-full flex flex-col items-center mb-10 px-4">
-      <h2 className="text-3xl font-bold text-green-600 mt-4 mb-2">The KiiT</h2>
-      <div className="w-24 border-t-2 border-green-400 mb-6" />
+      <h2 className="text-4xl font-bold text-green-700 mt-4 mb-2">The KiiT</h2>
+      <div className="h-1 mx-auto mb-6 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5" />
 
       <div className="flex flex-col md:flex-row w-full max-w-6xl gap-6">
         {/* Left: Image */}

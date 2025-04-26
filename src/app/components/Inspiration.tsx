@@ -4,8 +4,8 @@ export default function Inspiration() {
   return (
     <section className="bg-white px-4 py-12 md:px-10 lg:px-20">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-[#c1ff72]">Our Inspiration</h2>
-        <div className="w-24 h-1 bg-[#c1ff72] mx-auto mt-2" />
+        <h2 className="text-4xl font-bold text-green-700">Our Inspiration</h2>
+        <div className="h-1 mx-auto mt-2 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5" />
       </div>
 
       <div className="flex flex-col lg:flex-row items-center gap-10">

@@ -89,46 +89,46 @@ const ScholarshipTable: React.FC = () => {
       </div>
 
       {/* Concession Table */}
-      <div className="overflow-x-auto">
-        <table className="min-w-full table-fixed border border-gray-200">
-          <colgroup>
-            <col className="w-1/3" />
-            <col className="w-1/3" />
-            <col className="w-1/3" />
-          </colgroup>
-          <thead>
-            <tr>
-              <th className="bg-green-500 text-white px-4 py-3 text-left border">
-                Concessions
-              </th>
-              <th className="bg-green-500 text-white px-4 py-3 text-center border">
-                Discount*
-              </th>
-              <th className="bg-green-500 text-white px-4 py-3 text-left border">
-                Eligibility criteria
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {concessionData.map((item, index) => (
-              <tr key={index} className="bg-white">
-                {index === 0 && (
-                  <td
-                    className="px-4 py-3 border"
-                    rowSpan={concessionData.length}
-                  >
-                    {item.concession}
-                  </td>
-                )}
-                <td className="px-4 py-3 text-center border">
-                  {item.discount}
-                </td>
-                <td className="px-4 py-3 border">{item.criteria}</td>
+        <div className="overflow-x-auto">
+          <table className="min-w-full table-fixed border border-gray-200">
+            <colgroup>
+              <col className="w-1/3" />
+              <col className="w-1/3" />
+              <col className="w-1/3" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th className="bg-green-500 text-white px-4 py-3 text-left border">
+                  Concessions
+                </th>
+                <th className="bg-green-500 text-white px-4 py-3 text-center border">
+                  Discount*
+                </th>
+                <th className="bg-green-500 text-white px-4 py-3 text-left border">
+                  Eligibility criteria
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              {concessionData.map((item, index) => (
+                <tr key={index} className="bg-white">
+                  {index === 0 && (
+                    <td
+                      className="px-4 py-3 border"
+                      rowSpan={concessionData.length}
+                    >
+                      {item.concession}
+                    </td>
+                  )}
+                  <td className="px-4 py-3 text-center border">
+                    {item.discount}
+                  </td>
+                  <td className="px-4 py-3 border">{item.criteria}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
       {/* Footer Note */}
       <div className="text-right mt-2">
