@@ -43,6 +43,18 @@ const AccreditationAndRanking = () => {
       texts: ["Tier 1", "Accreditation", "Washington Accord"],
       color: "#0097b2",
     },
+    {
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316490/f1f1a227-e74e-4859-905a-8228ce4a7f71.png",
+      alt: "NAAC Logo",
+      texts: ["A++ Grade", "Accredited by", "NAAC"],
+      color: "#737373",
+    },
+    {
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316597/445f1c76-6728-4cb5-b8ee-89420af6a41b.png",
+      alt: "NBA Logo",
+      texts: ["Tier 1", "Accreditation", "Washington Accord"],
+      color: "#0097b2",
+    },
   ];
 
   const rankings: RankingItem[] = [
@@ -92,9 +104,35 @@ const AccreditationAndRanking = () => {
 
       <div className="relative w-full overflow-hidden">
         <div className="flex animate-infinite-scroll">
-          {[...accreditations, ...accreditations].map((item, idx) => (
+          {accreditations.map((item, idx) => (
             <div
               key={idx}
+              className="flex-none w-[200px] h-[200px] bg-white m-4 p-4 rounded-2xl shadow-xl text-center flex flex-col justify-center items-center gap-2"
+            >
+              <Image
+                src={item.img}
+                alt={item.alt}
+                width={70}
+                height={70}
+                className="mx-auto object-contain"
+              />
+              <div className="mt-2 space-y-1">
+                {item.texts.map((text, i) => (
+                  <p
+                    key={i}
+                    className="font-bold text-sm"
+                    style={{ color: item.color }}
+                  >
+                    {text}
+                  </p>
+                ))}
+              </div>
+            </div>
+          ))}
+          {/* Duplicate the accreditations here for continuous scrolling */}
+          {accreditations.map((item, idx) => (
+            <div
+              key={`duplicate-${idx}`}
               className="flex-none w-[200px] h-[200px] bg-white m-4 p-4 rounded-2xl shadow-xl text-center flex flex-col justify-center items-center gap-2"
             >
               <Image
@@ -128,9 +166,29 @@ const AccreditationAndRanking = () => {
 
       <div className="relative w-full overflow-hidden">
         <div className="flex animate-infinite-scroll">
-          {[...rankings, ...rankings].map((item, idx) => (
+          {rankings.map((item, idx) => (
             <div
               key={idx}
+              className={`flex-none w-[250px] h-[250px] bg-white border-4 ${item.border} m-4 rounded-2xl shadow-xl p-4 text-center flex flex-col justify-center items-center`}
+            >
+              <Image
+                src={item.img}
+                alt={item.alt}
+                width={90}
+                height={60}
+                className="mx-auto mb-2 object-contain"
+              />
+              <div className="space-y-1 text-gray-700 text-sm font-semibold">
+                {item.texts.map((text, i) => (
+                  <p key={i}>{text}</p>
+                ))}
+              </div>
+            </div>
+          ))}
+          {/* Duplicate the rankings here for continuous scrolling */}
+          {rankings.map((item, idx) => (
+            <div
+              key={`duplicate-${idx}`}
               className={`flex-none w-[250px] h-[250px] bg-white border-4 ${item.border} m-4 rounded-2xl shadow-xl p-4 text-center flex flex-col justify-center items-center`}
             >
               <Image
