@@ -145,3 +145,17 @@
     clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
   }
 }
+
+/* Add this in your CSS file */
+@keyframes animateLine {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 80%;
+  }
+}
+
+.timeline-line {
+  animation: animateLine 2s ease-in-out forwards; /* Adjust timing as needed */
+}

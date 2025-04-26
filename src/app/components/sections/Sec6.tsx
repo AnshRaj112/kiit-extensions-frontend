@@ -11,8 +11,8 @@ const companyLogos = [
   { src: "/logos/deloitte.png", alt: "Deloitte" },
   { src: "/logos/yugabyte.png", alt: "YugabyteDB" },
   { src: "/logos/musigma.png", alt: "Mu Sigma" },
-  { src: "/logos/highradius.png", alt: "Highradius" },
-  { src: "/logos/microsoft.png", alt: "Microsoft" },
+  { src: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745640067/0a55cf83-410e-485f-8feb-04797e91d63f.png", alt: "Highradius" },
+  { src: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745640013/663744e9-adca-433f-a3ed-6178652a0e4c.png", alt: "Microsoft" },
   { src: "/logos/accenture.png", alt: "Accenture" },
 ];
 

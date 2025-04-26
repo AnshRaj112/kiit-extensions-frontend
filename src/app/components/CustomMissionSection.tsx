@@ -42,12 +42,10 @@ const CustomMissionSection = () => {
     },
   ];
 
-  // Reference for content boxes to ensure uniform height
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [contentHeight, setContentHeight] = useState<number | null>(null);
 
   useEffect(() => {
-    // Function to calculate and set the maximum height
     const calculateMaxHeight = () => {
       const heights = contentRefs.current
         .filter(Boolean)
@@ -59,11 +57,9 @@ const CustomMissionSection = () => {
       }
     };
 
-    // Calculate on mount and window resize
     calculateMaxHeight();
     window.addEventListener("resize", calculateMaxHeight);
 
-    // Cleanup
     return () => window.removeEventListener("resize", calculateMaxHeight);
   }, []);
 
@@ -76,7 +72,7 @@ const CustomMissionSection = () => {
       </div>
 
       {/* Mission cards grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 relative z-10">
         {missionItems.map((item, index) => (
           <div key={index} className="flex flex-col">
             {/* Card with logo and description */}
@@ -120,22 +116,26 @@ const CustomMissionSection = () => {
 
             {/* Timeline node */}
             <div className="flex justify-center mt-2">
-              <div className="w-6 h-6 rounded-full" style={{ backgroundColor: item.color }}></div>
+              <div
+                className="w-6 h-6 rounded-full relative z-10"
+                style={{ backgroundColor: item.color }}
+              ></div>
             </div>
           </div>
         ))}
       </div>
 
       {/* Timeline connecting line */}
-      <div className="hidden lg:block relative">
+      <div className="hidden lg:block relative z-0">
         <div
-          className="absolute h-1 mx-auto left-[10%] right-[10%]"
+          className="absolute h-1 mx-auto left-[10%] right-[10%] timeline-line"
           style={{
-            backgroundColor: "#20b8e3",
-            marginTop: "-18px",
+            backgroundColor: "#20b8e3", // lowered line
             width: "80%",
-            top: "50%",
+            marginTop: "-11.5px",
+            top: "10%",
             transform: "translateY(-50%)",
+            zIndex: 0,
           }}
         />
       </div>
