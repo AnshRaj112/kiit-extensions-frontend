@@ -44,7 +44,13 @@ const AccreditationAndRanking = () => {
       img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316931/4413100a-f28b-43ce-99a9-9db1a9535ede.png",
       alt: "QS Logo",
       border: "border-green-300",
-      texts: ["QS 5 Stars", "India’s first QS 5 Stars Rated", "University – 2021", "257th Rank", "In QS World University Rankings: ASIA 2025"],
+      texts: [
+        "QS 5 Stars",
+        "India’s first QS 5 Stars Rated",
+        "University – 2021",
+        "257th Rank",
+        "In QS World University Rankings: ASIA 2025",
+      ],
     },
     {
       img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745317017/157bcf7d-49fe-4b4d-bce1-a66d3e97798b.png",
@@ -60,14 +66,13 @@ const AccreditationAndRanking = () => {
     },
   ];
 
-  // Accreditation slider
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     breakpoints: {
       "(min-width: 1024px)": {
         slides: {
-          perView: accreditations.length > 4 ? 4 : accreditations.length,
-          spacing: 16,
+          perView: 4,
+          spacing: 24,
         },
       },
     },
@@ -78,14 +83,13 @@ const AccreditationAndRanking = () => {
     renderMode: "performance",
   });
 
-  // Ranking slider
   const [sliderRefRanking, instanceRefRanking] = useKeenSlider<HTMLDivElement>({
     loop: true,
     breakpoints: {
       "(min-width: 1024px)": {
         slides: {
-          perView: rankings.length > 4 ? 4 : rankings.length,
-          spacing: 16,
+          perView: 3,
+          spacing: 24,
         },
       },
     },
@@ -96,91 +100,91 @@ const AccreditationAndRanking = () => {
     renderMode: "performance",
   });
 
-  // Auto-slide for Accreditation (only on mobile)
   useEffect(() => {
     const isMobile = window.innerWidth <= 1024;
     if (isMobile && instanceRef.current) {
       const interval = setInterval(() => {
         instanceRef.current?.next();
       }, 3000);
-
       return () => clearInterval(interval);
     }
   }, [instanceRef]);
 
-  // Auto-slide for Ranking (only on mobile)
   useEffect(() => {
     const isMobile = window.innerWidth <= 1024;
     if (isMobile && instanceRefRanking.current) {
       const interval = setInterval(() => {
         instanceRefRanking.current?.next();
       }, 3000);
-
       return () => clearInterval(interval);
     }
   }, [instanceRefRanking]);
 
   return (
-    <div className="p-4 sm:p-6 md:p-12 max-w-7xl mx-auto">
+    <div className="px-4 sm:px-8 md:px-16 py-12 max-w-7xl mx-auto">
       {/* Accreditation Section */}
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-green-700 mb-4">
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-green-700 mb-6">
         Accreditation
       </h2>
-      <div className="h-1 mx-auto mt-2 mb-8 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-2/3 sm:w-1/2 md:w-1/3 lg:w-1/4" />
+      <div className="h-1 mx-auto mb-10 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-2/3 sm:w-1/2 md:w-1/3" />
 
-      {/* Accreditation carousel */}
       <div ref={sliderRef} className="keen-slider">
         {accreditations.map((item, idx) => (
           <div
             key={idx}
-            className="keen-slider__slide flex flex-col items-center text-center w-full"
+            className="keen-slider__slide flex flex-col items-center justify-center text-center p-6 transition-transform duration-300 hover:scale-105"
           >
-            <Image
-              src={item.img}
-              alt={item.alt}
-              width={100}
-              height={100}
-              className="mx-auto"
-            />
-            <div className="mt-2 space-y-1">
-              {item.texts.map((text, i) => (
-                <p
-                  key={i}
-                  className="font-bold text-sm sm:text-base"
-                  style={{ color: item.color }}
-                >
-                  {text}
-                </p>
-              ))}
+            <div className="bg-white p-4 rounded-xl shadow-md w-full h-full flex flex-col items-center">
+              <Image
+                src={item.img}
+                alt={item.alt}
+                width={120}
+                height={120}
+                className="object-contain"
+              />
+              <div className="mt-4 space-y-1">
+                {item.texts.map((text, i) => (
+                  <p
+                    key={i}
+                    className="font-semibold text-sm sm:text-base"
+                    style={{ color: item.color }}
+                  >
+                    {text}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         ))}
       </div>
 
       {/* Ranking Section */}
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-green-700 mt-14 mb-4">
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-green-700 mt-20 mb-6">
         Ranking
       </h2>
-      <div className="h-1 mx-auto mb-10 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-2/3 sm:w-1/2 md:w-1/3 lg:w-1/4" />
+      <div className="h-1 mx-auto mb-10 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-2/3 sm:w-1/2 md:w-1/3" />
 
-      {/* Ranking carousel */}
       <div ref={sliderRefRanking} className="keen-slider">
         {rankings.map((item, idx) => (
           <div
             key={idx}
-            className={`keen-slider__slide border-4 ${item.border} rounded-2xl p-6 flex flex-col items-center`}
+            className={`keen-slider__slide flex flex-col items-center justify-center text-center p-6 transition-transform duration-300 hover:scale-105`}
           >
-            <Image
-              src={item.img}
-              alt={item.alt}
-              width={160}
-              height={100}
-              className="mb-4"
-            />
-            <div className="space-y-1 text-gray-700 text-sm sm:text-base font-medium text-center">
-              {item.texts.map((text, i) => (
-                <p key={i}>{text}</p>
-              ))}
+            <div
+              className={`bg-white border-4 ${item.border} rounded-2xl shadow-md w-full h-full flex flex-col items-center p-6`}
+            >
+              <Image
+                src={item.img}
+                alt={item.alt}
+                width={160}
+                height={100}
+                className="object-contain mb-4"
+              />
+              <div className="space-y-1 text-gray-700 text-sm sm:text-base font-medium">
+                {item.texts.map((text, i) => (
+                  <p key={i}>{text}</p>
+                ))}
+              </div>
             </div>
           </div>
         ))}
