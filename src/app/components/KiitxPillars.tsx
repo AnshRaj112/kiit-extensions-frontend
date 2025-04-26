@@ -143,7 +143,7 @@ const KiiTX = () => {
         {/* Roof */}
         <div className="relative w-full max-w-5xl">
           <div className="w-full h-0 pb-[18%] bg-gray-300 clip-roof"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-gray-500"></div>
+          <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-gray-500 aspect-square w-[12%] max-w-20 min-w-10"></div>
         </div>
 
         {/* Pillars */}
@@ -156,7 +156,7 @@ const KiiTX = () => {
         {/* Foundation */}
         <div className="w-full max-w-5xl mt-4">
           <div className="h-8 bg-gray-300 rounded-lg mb-2" />
-          <div className="h-8 w-[90%] mx-auto bg-gray-300 rounded-lg" />
+          <div className="h-6 w-[110%] -mx-[5%] bg-gray-300 rounded-lg" />
         </div>
       </div>
     </div>

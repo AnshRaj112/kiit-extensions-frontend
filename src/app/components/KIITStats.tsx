@@ -45,7 +45,7 @@ const stats = [
     icon: <Map size={20} />,
     color: "bg-yellow-400",
     value: "6117 acres",
-    label: "",
+    label: "Campus Area",
   },
 ];
 
@@ -67,18 +67,22 @@ export default function KIITStats() {
         </div>
 
         {/* Right: Stats */}
-        <div className="w-full md:w-1/2 flex flex-col justify-between gap-4 py-2">
+        <div className="w-full md:w-1/2 grid grid-cols-1 gap-3 py-2">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`flex items-center px-5 py-4 ${stat.color} text-white text-lg font-semibold rounded-lg`}
+              className={`flex items-center justify-between px-4 py-2 ${stat.color} text-white rounded-lg`}
             >
-              <div className="w-10 h-10 border-2 border-white rounded-full mr-4 flex items-center justify-center">
+              <div className="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center">
                 {stat.icon}
               </div>
-              <div>
-                <div className="text-xl font-bold">{stat.value}</div>
-                {stat.label && <div className="text-sm">{stat.label}</div>}
+              <div className="flex flex-col items-end justify-center">
+                <div className="text-lg font-bold leading-snug">{stat.value}</div>
+                {stat.label && (
+                  <div className="text-base font-medium leading-tight">
+                    {stat.label}
+                  </div>
+                )}
               </div>
             </div>
           ))}
@@ -87,4 +91,3 @@ export default function KIITStats() {
     </div>
   );
 }
-    
