@@ -8,6 +8,7 @@ import CustomMissionSection from "./components/CustomMissionSection";
 import KIITStats from "./components/KIITStats";
 import AlumniSection from "./components/sections/Sec6";
 import Inspiration from "./components/Inspiration";
+import QuickLinks from "./components/QuickLinks";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <KIITStats />
       <AlumniSection />
       <Inspiration />
+      <QuickLinks />
     </div>
   );
 }

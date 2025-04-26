@@ -91,11 +91,11 @@ const AccreditationAndRanking = () => {
       <div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-1/2 md:w-1/3" />
 
       <div className="relative w-full overflow-hidden">
-        <div className="flex min-w-max animate-infinite-scroll">
+        <div className="flex animate-infinite-scroll">
           {[...accreditations, ...accreditations].map((item, idx) => (
             <div
               key={idx}
-              className="flex-none w-48 h-48 bg-white m-4 p-4 rounded-2xl shadow-xl text-center flex flex-col justify-center items-center gap-2"
+              className="flex-none w-[200px] h-[200px] bg-white m-4 p-4 rounded-2xl shadow-xl text-center flex flex-col justify-center items-center gap-2"
             >
               <Image
                 src={item.img}
@@ -127,11 +127,11 @@ const AccreditationAndRanking = () => {
       <div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-1/2 md:w-1/3" />
 
       <div className="relative w-full overflow-hidden">
-        <div className="flex min-w-max animate-infinite-scroll">
+        <div className="flex animate-infinite-scroll">
           {[...rankings, ...rankings].map((item, idx) => (
             <div
               key={idx}
-              className={`flex-none w-56 h-56 bg-white border-4 ${item.border} m-4 rounded-2xl shadow-xl p-4 text-center flex flex-col justify-center items-center`}
+              className={`flex-none w-[250px] h-[250px] bg-white border-4 ${item.border} m-4 rounded-2xl shadow-xl p-4 text-center flex flex-col justify-center items-center`}
             >
               <Image
                 src={item.img}
@@ -154,3 +154,15 @@ const AccreditationAndRanking = () => {
 };
 
 export default AccreditationAndRanking;
+
+// Add the CSS for smooth scrolling and animation
+<style jsx>{`
+  @keyframes infinite-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  .animate-infinite-scroll {
+    animation: infinite-scroll 15s linear infinite;
+  }
+`}</style>
