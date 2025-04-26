@@ -1,19 +1,19 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import Image from "next/image";
 
 interface AccreditationItem {
   img: string;
   alt: string;
   texts: string[];
-  color: string; // Only in AccreditationItem
+  color: string;
 }
 
 interface RankingItem {
   img: string;
   alt: string;
-  border: string; // Only in RankingItem
+  border: string;
   texts: string[];
 }
 
@@ -50,11 +50,7 @@ const AccreditationAndRanking = () => {
       img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316828/46fcf251-f75a-4a70-bbdb-5a32ac003fca.png",
       alt: "NIRF Logo",
       border: "border-pink-300",
-      texts: [
-        "15th Rank",
-        "Among All Public & Private",
-        "Universities in India",
-      ],
+      texts: ["15th Rank", "Among All Public & Private", "Universities in India"],
     },
     {
       img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316931/4413100a-f28b-43ce-99a9-9db1a9535ede.png",
@@ -65,7 +61,7 @@ const AccreditationAndRanking = () => {
         "India’s first QS 5 Stars Rated",
         "University – 2021",
         "257th Rank",
-        "In QS World University Rankings: ASIA 2025",
+        "In QS World University", "Rankings: ASIA 2025",
       ],
     },
     {
@@ -86,113 +82,72 @@ const AccreditationAndRanking = () => {
     },
   ];
 
-  const accreditationRef = useRef<HTMLDivElement | null>(null);
-  const rankingRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const scrollContainer = (
-      ref: React.RefObject<HTMLDivElement | null>,
-      speed: number
-    ) => {
-      if (!ref.current) return;
-      let animationFrameId: number;
-      const scroll = () => {
-        if (ref.current) {
-          ref.current.scrollLeft += speed;
-          if (ref.current.scrollLeft >= ref.current.scrollWidth / 2) {
-            ref.current.scrollLeft = 0;
-          }
-        }
-        animationFrameId = requestAnimationFrame(scroll);
-      };
-      scroll();
-      return () => cancelAnimationFrame(animationFrameId);
-    };
-
-    const cleanup1 = scrollContainer(accreditationRef, 0.5);
-    const cleanup2 = scrollContainer(rankingRef, 0.7);
-
-    return () => {
-      cleanup1?.();
-      cleanup2?.();
-    };
-  }, []);
-
-  const duplicateItems = (items: AccreditationItem[] | RankingItem[]) => [
-    ...items,
-    ...items,
-  ]; // duplicate for seamless loop
-
   return (
-    <div className="px-4 sm:px-8 md:px-16 py-16 max-w-[1600px] mx-auto">
+    <div className="px-4 sm:px-8 md:px-16 py-16 max-w-[1600px] mx-auto overflow-hidden">
       {/* Accreditation Section */}
-      <h2 className="text-4xl md:text-5xl font-bold text-center text-green-700 mb-8">
+      <h2 className="text-4xl font-bold text-center text-green-700 mb-8">
         Accreditation
       </h2>
       <div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-1/2 md:w-1/3" />
 
-      <div
-        ref={accreditationRef}
-        className="flex overflow-hidden whitespace-nowrap gap-10 h-[400px]"
-      >
-        {duplicateItems(accreditations).map((item, idx) => (
-          <div
-            key={idx}
-            className="flex-none w-80 h-80 bg-white p-6 rounded-2xl shadow-xl text-center flex flex-row justify-center items-center gap-4"
-          >
-            <Image
-              src={item.img}
-              alt={item.alt}
-              width={140}
-              height={140}
-              className="mx-auto object-contain"
-            />
-            <div className="mt-6 space-y-2">
-              {item.texts.map((text, i) => (
-                <p
-                  key={i}
-                  className="font-bold text-lg"
-                  style={{ color: (item as AccreditationItem).color }} // Type narrow for AccreditationItem
-                >
-                  {text}
-                </p>
-              ))}
+      <div className="relative w-full overflow-hidden">
+        <div className="flex min-w-max animate-infinite-scroll">
+          {[...accreditations, ...accreditations].map((item, idx) => (
+            <div
+              key={idx}
+              className="flex-none w-48 h-48 bg-white m-4 p-4 rounded-2xl shadow-xl text-center flex flex-col justify-center items-center gap-2"
+            >
+              <Image
+                src={item.img}
+                alt={item.alt}
+                width={70}
+                height={70}
+                className="mx-auto object-contain"
+              />
+              <div className="mt-2 space-y-1">
+                {item.texts.map((text, i) => (
+                  <p
+                    key={i}
+                    className="font-bold text-sm"
+                    style={{ color: item.color }}
+                  >
+                    {text}
+                  </p>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* Ranking Section */}
-      <h2 className="text-4xl md:text-5xl font-bold text-center text-green-700 mt-28 mb-8">
+      <h2 className="text-4xl font-bold text-center text-green-700 mt-28 mb-8">
         Ranking
       </h2>
-<div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-1/2 md:w-1/3" />
+      <div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-1/2 md:w-1/3" />
 
-      <div
-        ref={rankingRef}
-        className="flex overflow-hidden whitespace-nowrap gap-10 h-[450px]"
-      >
-        {duplicateItems(rankings).map((item, idx) => (
-          <div
-            key={idx}
-            className={`flex-none w-96 h-96 bg-white border-4 ${
-              (item as RankingItem).border
-            } rounded-2xl shadow-xl p-8 text-center flex flex-col justify-center items-center`} // Type narrow for RankingItem
-          >
-            <Image
-              src={item.img}
-              alt={item.alt}
-              width={180}
-              height={120}
-              className="mx-auto mb-6 object-contain"
-            />
-            <div className="space-y-2 text-gray-700 text-lg font-semibold">
-              {item.texts.map((text, i) => (
-                <p key={i}>{text}</p>
-              ))}
+      <div className="relative w-full overflow-hidden">
+        <div className="flex min-w-max animate-infinite-scroll">
+          {[...rankings, ...rankings].map((item, idx) => (
+            <div
+              key={idx}
+              className={`flex-none w-56 h-56 bg-white border-4 ${item.border} m-4 rounded-2xl shadow-xl p-4 text-center flex flex-col justify-center items-center`}
+            >
+              <Image
+                src={item.img}
+                alt={item.alt}
+                width={90}
+                height={60}
+                className="mx-auto mb-2 object-contain"
+              />
+              <div className="space-y-1 text-gray-700 text-sm font-semibold">
+                {item.texts.map((text, i) => (
+                  <p key={i}>{text}</p>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

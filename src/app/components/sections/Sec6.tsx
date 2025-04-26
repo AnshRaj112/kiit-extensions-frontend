@@ -38,17 +38,26 @@ const companyLogos = [
     src: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745641521/6dd1ca82-7dc5-4be9-b9d7-d8ef3e7b1333.png",
     alt: "Accenture",
   },
+  {
+    src: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745686008/17a5cd52-4e51-4393-9d3f-985eed3de970.png",
+    alt: "A.P. Moller Maersk",
+  },
+  {
+    src: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745687382/f7e221df-60f4-490c-b7ff-d9ad4f32a3aa.png",
+    alt: "Dell"
+  },
 ];
 
 const AlumniSection = () => {
   const sliderSettings = {
     dots: false,
     infinite: true,
-    speed: 800,
+    speed: 6000, // Increased for very slow continuous movement
     slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToScroll: 1, // Change this to 1 for smoother small moves
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 0, // Set to 0 for continuous autoplay
+    cssEase: "linear", // Make the motion continuous and smooth
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 3 } },
       { breakpoint: 768, settings: { slidesToShow: 2 } },
@@ -67,7 +76,7 @@ const AlumniSection = () => {
           {companyLogos.map((logo, idx) => (
             <div
               key={idx}
-              className="px-8 py-6 flex items-center justify-center" // Enlarged outer div
+              className="px-8 py-6 flex items-center justify-center"
             >
               <div className="bg-white rounded-3xl shadow-lg h-40 w-full max-w-[250px] flex items-center justify-center p-6">
                 <img
