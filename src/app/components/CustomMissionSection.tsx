@@ -68,7 +68,7 @@ const CustomMissionSection = () => {
       {/* Title with underline */}
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-green-700 mb-2">Mission</h2>
-        <div className="h-1 mx-auto mt-2 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5" />
+        <div className="h-1 mx-auto my-6 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-3/4 sm:w-2/3 md:w-1/2 lg:w-1/3" />
       </div>
 
       {/* Mission cards grid */}
