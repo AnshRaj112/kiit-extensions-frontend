@@ -46,13 +46,13 @@ const AccreditationAndRanking = () => {
     {
       img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745736616/cc5d6f9f-8e2e-4273-835d-184e420b7e4c.png",
       alt: "ABET",
-      texts: ["ABET", "US"],
+      texts: ["ABET", ""],
       color: "Grey",
     },
     {
       img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745736727/c9adcb4e-69a8-4b87-be05-8d0578c02c67.png",
       alt: "IET",
-      texts: ["The Institution of", "Engineering and", "Technology"],
+      texts: ["The Institution of", "Engineering and", "Technology", "Accrediated"],
       color: "#964f9f",
     },
   ];

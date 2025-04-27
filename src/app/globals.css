@@ -145,6 +145,12 @@
     clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
   }
 }
+@layer components {
+  .clip-path-polygon {
+    clip-path: polygon(0 0, 100% 0, 50% 100%, 0 0);
+  }
+}
+
 
 /* Add this in your CSS file */
 @keyframes animateLine {

@@ -102,7 +102,7 @@ const QuickLinks: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
+    <div className="max-w-5xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold text-center text-green-500 mb-12">Quick Links</h1>
       <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-green-500 to-transparent mb-12"></div>
 

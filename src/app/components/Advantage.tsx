@@ -52,34 +52,30 @@ const KeyAdvantages: React.FC = () => {
         KiiTX: Key Advantages
       </h1>
       <div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-1/2 md:w-1/3" />
-      {/* <div className="flex justify-center mb-10">
-        <div className="h-1 bg-green-500 w-1/3"></div>
-      </div> */}
-
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-12">
         {advantages.map((advantage, index) => (
             <div key={index} className="flex flex-col items-center h-full"> 
-            {/* Hexagon card with circular logo at top */}
-            <div className="relative flex flex-col items-center h-full w-full">
-              {/* Circle for logo */}
-              <div className={`absolute -top-8 rounded-full p-4 ${advantage.color} border-4 ${advantage.borderColor} bg-white z-10 h-20 w-20 flex items-center justify-center`}>
-                {advantage.icon}
+              {/* Hexagon card with circular logo at top */}
+              <div className="relative flex flex-col items-center h-full w-full">
+                {/* Circle for logo */}
+                <div className={`absolute -top-8 rounded-full p-4 ${advantage.color} border-4 ${advantage.borderColor} bg-white z-10 h-20 w-20 flex items-center justify-center`}>
+                  {advantage.icon}
+                </div>
+                
+                {/* Hexagon-like shape with reduced height */}
+                <div className={`${advantage.color} pt-12 pb-6 px-4 text-center rounded-t-lg w-full mt-6 h-full flex flex-col`}>
+                  <h3 className="text-m font-bold text-white mb-2">
+                    {advantage.title}
+                  </h3>
+                  <p className="text-white text-sm flex-grow">
+                    {advantage.description}
+                  </p>
+                </div>
+                
+                {/* Bottom pointy part of hexagon */}
+                <div className={`${advantage.color} w-full h-10 clip-path-polygon`}></div>
               </div>
-              
-              {/* Hexagon-like shape */}
-              <div className={`${advantage.color} pt-16 pb-10 px-4 text-center rounded-t-lg w-full mt-6 h-full flex flex-col`}> 
-                <h3 className="text-xl font-bold text-white mb-2">
-                  {advantage.title}
-                </h3>
-                <p className="text-white text-sm flex-grow">
-                  {advantage.description}
-                </p>
-              </div>
-              
-              {/* Bottom pointy part of hexagon */}
-              <div className={`${advantage.color} w-full h-10 clip-path-polygon`}></div>
             </div>
-          </div>
         ))}
       </div>
     </div>
