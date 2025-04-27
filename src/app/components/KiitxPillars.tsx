@@ -138,7 +138,7 @@ const KiiTX = () => {
       </div>
 
       {/* Roof */}
-      <div className="flex justify-center w-full relative mt-16">
+      <div className="flex justify-center w-full relative mt-1">
         <img
           src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745748715/71be29d9-0392-4415-be74-e9c6fe7a57c3.png"
           alt="Roof"
@@ -149,7 +149,7 @@ const KiiTX = () => {
 
       {/* Pillars */}
       <div className="flex max-w-5xl justify-center w-full mt-5">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-16 max-w-4xl px-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl px-2">
           {" "}
           {/* Increased gap to gap-16 */}
           {pillars.map((pillar, index) => (
@@ -161,7 +161,7 @@ const KiiTX = () => {
       {/* Foundation */}
       <div className="w-full max-w-6xl mt-4 flex flex-col items-center">
         <div className="h-6 w-full sm:w-10/12 md:w-8/12 lg:w-full bg-gray-300 rounded-lg mb-2" />
-        <div className="h-6 w-full sm:w-10/12 md:w-8/12 lg:w-[110%] bg-gray-300 rounded-lg" />
+        <div className="h-6 w-full sm:w-10/12 md:w-8/12 lg:w-full bg-gray-300 rounded-lg mb-2" />
       </div>
     </div>
   );
