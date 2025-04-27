@@ -11,7 +11,7 @@ const KeyAdvantages: React.FC = () => {
   const advantages = [
     {
       title: "Diverse Interdisciplinary Options",
-      description: "Get a wide variety of programs, ranging from short-term courses to full-fledged degree programs, aligned with professional career goals and aspirations",
+      description: "Explore diverse programs, from short courses to degrees, designed to align with your career goals and tailored for your future.",
       color: "bg-green-400",
       borderColor: "border-green-500",
       icon: <BookOpen className="h-10 w-10 text-green-600" />,
