@@ -35,7 +35,9 @@ const Header = () => {
   const [isProgramOpen, setIsProgramOpen] = useState(false);
   const [activeOption, setActiveOption] = useState<number | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [mobileActiveOption, setMobileActiveOption] = useState<number | null>(null);
+  const [mobileActiveOption, setMobileActiveOption] = useState<number | null>(
+    null
+  );
 
   const toggleMobileOption = (index: number) => {
     if (mobileActiveOption === index) {
@@ -48,33 +50,24 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 shadow-md bg-white">
       <div className="flex justify-between items-center px-6 py-3 min-h-[60px]">
-        
         {/* Left: Logo */}
         <div className="flex items-center">
           <Link href="/">
-            <img src="/Picture1.png" alt="Logo" className="h-10 w-auto" />
+            <img
+              src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745768831/fe3d2249-c864-4cab-b014-5f1c3ac1ed5b.png"
+              alt="Logo"
+              className="h-10 w-auto"
+            />
           </Link>
         </div>
 
         {/* Desktop Right Section */}
         <div className="hidden md:flex bg-white items-center space-x-6">
-          
-          {/* Contact Us */}
-          <a
-            href="tel:+1234567890"
-            className="flex items-center text-white bg-gradient-to-r from-[#0097b2] to-[#7ed952] px-4 py-2 rounded-[36px] hover:bg-gradient-to-r hover:from-[#00a9c3] hover:to-[#6ecf51] transition-colors"
-          >
+          {/* Contact Us with Phone Number */}
+          <div className="flex items-center text-white bg-gradient-to-r from-[#0097b2] to-[#7ed952] px-4 py-2 rounded-[36px] hover:bg-gradient-to-r hover:from-[#00a9c3] hover:to-[#6ecf51] transition-colors">
             <Phone className="w-6 h-6 mr-2 stroke-[2.5]" />
-            Contact Us
-          </a>
-
-          {/* Portal Login */}
-          <Link
-            href="/portal-login"
-            className="flex items-center text-gray-800 hover:text-green-500 text-base font-semibold transition-colors"
-          >
-            Portal Login
-          </Link>
+            <span className="text-sm">+123 456 7890</span> {/* Phone Number */}
+          </div>
 
           {/* Program */}
           <div className="relative bg-white">
@@ -118,19 +111,60 @@ const Header = () => {
               </div>
             )}
           </div>
+
+          {/* Menu Button */}
+          <div className="relative">
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-gray-800 hover:text-green-500 transition-colors"
+            >
+              <Menu className="w-6 h-6 stroke-[2.5]" />
+            </button>
+
+            {isMobileMenuOpen && (
+              <div className="absolute top-12 bg-white right-0 border rounded shadow-lg w-40">
+                <Link
+                  href="/"
+                  className="block px-4 py-2 bg-white hover:bg-green-100 text-sm transition-colors"
+                >
+                  Leaderships
+                </Link>
+                <Link
+                  href="/portal-login"
+                  className="block px-4 py-2 bg-white hover:bg-green-100 text-sm transition-colors"
+                >
+                  LMS login
+                </Link>
+                <Link
+                  href="/"
+                  className="block px-4 py-2 bg-white hover:bg-green-100 text-sm transition-colors"
+                >
+                  Admission Portal
+                </Link>
+                <Link
+                  href="/"
+                  className="block px-4 py-2 bg-white hover:bg-green-100 text-sm transition-colors"
+                >
+                  FAQs
+                </Link>
+                <Link
+                  href="/"
+                  className="block px-4 py-2 bg-white hover:bg-green-100 text-sm transition-colors"
+                >
+                  Help Desk
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile Header */}
         <div className="md:hidden flex bg-white items-center space-x-4">
-          
-          {/* Contact Us */}
-          <a
-            href="tel:+1234567890"
-            className="flex items-center text-white bg-gradient-to-r from-[#0097b2] to-[#7ed952] px-4 py-2 rounded-[36px] hover:bg-gradient-to-r hover:from-[#00a9c3] hover:to-[#6ecf51] transition-colors"
-          >
-            <Phone className="h-6 w-6 mr-2 stroke-[2.5]" />
-            Contact Us
-          </a>
+          {/* Contact Us with Phone Number for Mobile */}
+          <div className="flex items-center text-white bg-gradient-to-r from-[#0097b2] to-[#7ed952] px-4 py-2 rounded-[36px] hover:bg-gradient-to-r hover:from-[#00a9c3] hover:to-[#6ecf51] transition-colors">
+            <Phone className="w-6 h-6 mr-2 stroke-[2.5]" />
+            <span className="text-sm">+123 456 7890</span> {/* Phone Number */}
+          </div>
 
           {/* Mobile Menu Button */}
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
@@ -151,7 +185,11 @@ const Header = () => {
                   className="flex justify-between items-center w-full text-gray-700 hover:text-green-500 text-left transition-colors"
                 >
                   {option.title}
-                  <ChevronDown className={`w-5 h-5 stroke-[2.5] transform ${mobileActiveOption === index ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`w-5 h-5 stroke-[2.5] transform ${
+                      mobileActiveOption === index ? "rotate-180" : ""
+                    }`}
+                  />
                 </button>
 
                 {mobileActiveOption === index && (
@@ -172,8 +210,43 @@ const Header = () => {
           </div>
 
           <div className="border-t pt-4 space-y-2">
-            <Link href="/portal-login" className="block text-gray-700 hover:text-green-500 text-sm transition-colors">
-              Portal Login
+            <Link
+              href="/"
+              className="block text-gray-700 hover:text-green-500 text-sm transition-colors"
+            >
+              Leaderships
+            </Link>
+          </div>
+          <div className="border-t pt-4 space-y-2">
+            <Link
+              href="/portal-login"
+              className="block text-gray-700 hover:text-green-500 text-sm transition-colors"
+            >
+              LMS login
+            </Link>
+          </div>
+          <div className="border-t pt-4 space-y-2">
+            <Link
+              href="/"
+              className="block text-gray-700 hover:text-green-500 text-sm transition-colors"
+            >
+              Admission Portal
+            </Link>
+          </div>
+          <div className="border-t pt-4 space-y-2">
+            <Link
+              href="/"
+              className="block text-gray-700 hover:text-green-500 text-sm transition-colors"
+            >
+              FAQs
+            </Link>
+          </div>
+          <div className="border-t pt-4 space-y-2">
+            <Link
+              href="/"
+              className="block text-gray-700 hover:text-green-500 text-sm transition-colors"
+            >
+              Help Desk
             </Link>
           </div>
         </div>
