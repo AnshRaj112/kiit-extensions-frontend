@@ -14,7 +14,7 @@ export const Footer = () => {
   const closeModal = () => setIsModalOpen(false);
 
   return (
-    <footer className="bg-white py-8 px-4 shadow-md mt-auto">
+    <footer className="bg-white py-8 px-4 shadow-md mt-[-4]">
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-6 flex flex-col justify-between">

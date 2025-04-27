@@ -109,7 +109,7 @@ const QuickLinks: React.FC = () => {
   return (
     <div className="max-w-5xl mx-auto px-4 py-12">
       {/* Divider Around Toggle Button */}
-      <div className="flex justify-center items-center mb-8">
+      <div className="flex justify-center items-center mb-3">
         <div className="flex-grow h-0.5 bg-gradient-to-l from-[#0097b2] to-transparent"></div>
         <button
           onClick={toggleLinks}
@@ -124,8 +124,8 @@ const QuickLinks: React.FC = () => {
       {/* Quick Links Section */}
       {showLinks && (
         <>
-          <h1 className="text-3xl font-bold text-center text-green-500 mb-12">Quick Links</h1>
-          <div className="w-full h-0.5 bg-gradient-to-r from-transparent via-green-500 to-transparent mb-12"></div>
+          <h1 className="text-3xl font-bold text-center text-green-500 mb-3">Quick Links</h1>
+          <div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-1/2 md:w-1/3" />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <LinkColumn title="Online Degree Programs" links={onlineDegrees} />
