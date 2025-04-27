@@ -110,7 +110,7 @@ const QuickLinks: React.FC = () => {
     <div className="max-w-5xl mx-auto px-4 py-12">
       {/* Divider Around Toggle Button */}
       <div className="flex justify-center items-center mb-8">
-        <div className="flex-grow h-0.5 bg-gradient-to-r from-[#0097b2] to-[#7ed952]"></div>
+        <div className="flex-grow h-0.5 bg-gradient-to-l from-[#0097b2] to-[#7ed952]"></div>
         <button
           onClick={toggleLinks}
           className="flex items-center justify-center gap-2 bg-gradient-to-r from-[#0097b2] to-[#7ed952] text-white font-semibold py-2 px-6 rounded-full hover:bg-green-600 transition-all duration-200 border border-green-400 min-w-[180px] mx-4"
