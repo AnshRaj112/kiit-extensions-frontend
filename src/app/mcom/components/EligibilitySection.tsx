@@ -3,11 +3,26 @@ import React from "react";
 const EligibilitySection: React.FC = () => {
   return (
     <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <h1 className="text-4xl font-bold text-green-500">Eligibility</h1>
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-        {" "}
-        <div className="h-1 bg-green-500 w-full md:w-[80%] mt-2"></div>
-      </div>
+              <h1
+          className="relative inline-block text-4xl mb-8 font-bold text-green-500 
+  after:content-[''] 
+  after:absolute 
+  after:left-0 
+  after:bottom-[-19px] 
+  after:w-full 
+  sm:after:w-[238%] 
+  after:h-1 
+  after:bg-gradient-to-r 
+  after:from-[#0097b2] 
+  after:to-[#7ed952]"
+        >
+          Eligibility
+        </h1>
+        {/* <h1 className="text-4xl font-bold text-green-500">Eligibility</h1>
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+          {" "}
+          <div className="h-1 bg-green-500 w-full md:w-[80%] mt-2"></div>
+        </div> */}
 
       <div className="flex flex-col lg:flex-row gap-6 mt-6">
         <div className="lg:w-3/5 border border-green-200 rounded-lg p-6">

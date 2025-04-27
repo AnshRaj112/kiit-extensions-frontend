@@ -43,82 +43,96 @@ const ProcessStep: React.FC<ProcessStepProps> = ({
 
 const AdmissionProcess: React.FC = () => {
   return (
-    <div className="container max-w-7xl mx-auto py-10 px-4">
-      <h1 className="text-3xl md:text-4xl font-bold text-emerald-500 mb-6 pb-2 border-b-4 border-emerald-500 inline-block">
-        Admission Process
-      </h1>
+    <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <h1
+          className="relative inline-block text-4xl font-bold text-green-500 
+  after:content-[''] 
+  after:absolute 
+  after:left-0 
+  after:bottom-[-19px] 
+  after:w-full 
+  sm:after:w-[130%] 
+  after:h-1 
+  after:bg-gradient-to-r 
+  after:from-[#0097b2] 
+  after:to-[#7ed952]"
+        >
+          Admission Process
+        </h1>
 
-      <div className="mt-10 border border-emerald-200 rounded-lg p-6 md:p-8 flex flex-col md:flex-row gap-6">
-        {/* Steps */}
-        <div className="md:w-3/5 flex flex-col space-y-6">
-          {/* Desktop view */}
-          <div className="hidden md:flex flex-col space-y-6 items-center">
-            <ProcessStep
-              title="Choose Your Program"
-              description="Find the perfect fit for your aspirations"
-              bgColor="bg-purple-500 text-white"
-            />
-            <ProcessStep
-              title="Apply & Register"
-              description="Share your details and pay the application fee"
-              bgColor="bg-emerald-400 text-white"
-            />
-            <ProcessStep
-              title="Submit Documents"
-              description="Upload required files and complete your application"
-              bgColor="bg-yellow-300 text-gray-800"
-            />
-            <ProcessStep
-              title="University Approval"
-              description="We'll review your application for admission confirmation"
-              bgColor="bg-pink-400 text-white"
-            />
-            <ProcessStep
-              title="Pay Program Fees"
-              description="Secure your spot with your first installment"
-              bgColor="bg-sky-400 text-white"
-              isLast={true}
-            />
+        <div className="mt-10 border border-emerald-200 rounded-lg p-6 md:p-8 flex flex-col md:flex-row gap-6">
+          {/* Steps */}
+          <div className="md:w-3/5 flex flex-col space-y-6">
+            {/* Desktop view */}
+            <div className="hidden md:flex flex-col space-y-6 items-center">
+              <ProcessStep
+                title="Choose Your Program"
+                description="Find the perfect fit for your aspirations"
+                bgColor="bg-purple-500 text-white"
+              />
+              <ProcessStep
+                title="Apply & Register"
+                description="Share your details and pay the application fee"
+                bgColor="bg-emerald-400 text-white"
+              />
+              <ProcessStep
+                title="Submit Documents"
+                description="Upload required files and complete your application"
+                bgColor="bg-yellow-300 text-gray-800"
+              />
+              <ProcessStep
+                title="University Approval"
+                description="We'll review your application for admission confirmation"
+                bgColor="bg-pink-400 text-white"
+              />
+              <ProcessStep
+                title="Pay Program Fees"
+                description="Secure your spot with your first installment"
+                bgColor="bg-sky-400 text-white"
+                isLast={true}
+              />
+            </div>
+
+            {/* Mobile view */}
+            <div className="md:hidden flex flex-col items-center space-y-4">
+              <ProcessStep
+                title="Choose Your Program"
+                description="Find the perfect fit for your aspirations"
+                bgColor="bg-purple-500 text-white"
+              />
+              <ProcessStep
+                title="Apply & Register"
+                description="Share your details and pay the application fee"
+                bgColor="bg-emerald-400 text-white"
+              />
+              <ProcessStep
+                title="Submit Documents"
+                description="Upload required files and complete your application"
+                bgColor="bg-yellow-300 text-gray-800"
+              />
+              <ProcessStep
+                title="University Approval"
+                description="We'll review your application for admission confirmation"
+                bgColor="bg-pink-400 text-white"
+              />
+              <ProcessStep
+                title="Pay Program Fees"
+                description="Secure your spot with your first installment"
+                bgColor="bg-sky-400 text-white"
+                isLast={true}
+              />
+            </div>
           </div>
 
-          {/* Mobile view */}
-          <div className="md:hidden flex flex-col items-center space-y-4">
-            <ProcessStep
-              title="Choose Your Program"
-              description="Find the perfect fit for your aspirations"
-              bgColor="bg-purple-500 text-white"
-            />
-            <ProcessStep
-              title="Apply & Register"
-              description="Share your details and pay the application fee"
-              bgColor="bg-emerald-400 text-white"
-            />
-            <ProcessStep
-              title="Submit Documents"
-              description="Upload required files and complete your application"
-              bgColor="bg-yellow-300 text-gray-800"
-            />
-            <ProcessStep
-              title="University Approval"
-              description="We'll review your application for admission confirmation"
-              bgColor="bg-pink-400 text-white"
-            />
-            <ProcessStep
-              title="Pay Program Fees"
-              description="Secure your spot with your first installment"
-              bgColor="bg-sky-400 text-white"
-              isLast={true}
+          {/* Image */}
+          <div className="md:w-2/5 flex justify-center items-center">
+            <img
+              src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1742974664/samples/breakfast.jpg"
+              alt="Student applying online"
+              className="rounded-lg w-full h-auto object-cover shadow-lg"
             />
           </div>
-        </div>
-
-        {/* Image */}
-        <div className="md:w-2/5 flex justify-center items-center">
-          <img
-            src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1742974664/samples/breakfast.jpg"
-            alt="Student applying online"
-            className="rounded-lg w-full h-auto object-cover shadow-lg"
-          />
         </div>
       </div>
     </div>
