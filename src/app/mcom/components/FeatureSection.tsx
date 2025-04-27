@@ -72,7 +72,7 @@ const FeatureSection = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 py-8 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Header */}
         <h1 className="text-2xl md:text-4xl font-bold text-center mb-10 text-[#0097b2]">
           Elevate Your Learning Journey with KiiTX!!

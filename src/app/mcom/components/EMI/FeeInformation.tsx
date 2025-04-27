@@ -31,7 +31,7 @@ export function FeeInformation() {
   const currentFees = feeData[activeStudentType];
   
   return (
-    <div className="max-w-7xl mx-auto px-4">
+    <div className="mx-auto px-4" style={{ maxWidth: "68rem" }}>
               <h1
           className="relative mb-8 inline-block text-4xl font-bold text-green-500 
   after:content-[''] 

@@ -2,7 +2,7 @@ import React from "react";
 
 const OnlineDegreeProgram: React.FC = () => {
   return (
-<div className="max-w-[1320px] mx-auto px-4 py-8">
+<div className="max-w-5xl mx-auto px-4 py-8">
       <div className="rounded-2xl overflow-hidden">
         {/* Main gradient header */}
         <div className="bg-gradient-to-r from-[#0097b2] to-[#7ed952] py-8 px-6 text-white">

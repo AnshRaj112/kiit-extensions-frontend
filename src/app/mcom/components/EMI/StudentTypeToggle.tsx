@@ -13,7 +13,7 @@ export function StudentTypeToggle({ activeType, onToggle }: StudentTypeTogglePro
       <button
         onClick={() => onToggle('indian')}
         className={cn(
-          "py-3 px-8 text-center transition-colors font-medium",
+          "flex-1 py-3 px-8 text-center transition-colors font-medium",
           activeType === 'indian' 
             ? "bg-gradient-to-r from-[#0097b2] to-[#7ed952] text-white" 
             : "bg-white text-green-600 hover:bg-gray-50"
@@ -24,10 +24,10 @@ export function StudentTypeToggle({ activeType, onToggle }: StudentTypeTogglePro
       <button
         onClick={() => onToggle('international')}
         className={cn(
-          "py-3 px-8 text-center transition-colors font-medium",
+          "flex-1 py-3 px-8 text-center transition-colors font-medium border-l",
           activeType === 'international' 
             ? "bg-gradient-to-l from-[#0097b2] to-[#7ed952] text-white" 
-            : "bg-white text-green-600 hover:bg-gray-50 border-l"
+            : "bg-white text-green-600 hover:bg-gray-50"
         )}
       >
         International Students

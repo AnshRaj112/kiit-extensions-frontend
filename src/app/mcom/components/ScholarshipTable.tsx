@@ -49,7 +49,7 @@ const ScholarshipTable: React.FC = () => {
   ];
 
   return (
-    <div className="w-full max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-8" style={{ maxWidth: "70rem" }}>
       <h1
         className="relative inline-block mb-8 text-4xl font-bold text-green-500 
   after:content-[''] 

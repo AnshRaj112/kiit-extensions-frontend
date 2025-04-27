@@ -3,7 +3,7 @@ import React from 'react';
 const CertificateSection = () => {
   return (
     <div className="min-h-screen w-full bg-gradient-to-r from-yellow-300 to-orange-400 p-4 md:p-8">
-      <div className="max-w-7xl mx-auto flex flex-col gap-12">
+      <div className="max-w-5xl mx-auto flex flex-col gap-12">
         {/* Heading */}
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-green-600 text-center md:text-left mb-4">
           Sample Certificate
