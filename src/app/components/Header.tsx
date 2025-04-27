@@ -60,7 +60,10 @@ const Header = () => {
         <div className="hidden md:flex items-center space-x-6">
           
           {/* Contact Us */}
-          <a href="tel:+1234567890" className="flex items-center text-gray-700 hover:text-green-500 text-sm font-semibold transition-colors">
+          <a
+            href="tel:+1234567890"
+            className="flex items-center text-white bg-gradient-to-r from-[#0097b2] to-[#7ed952] px-4 py-2 rounded-[36px] hover:bg-gradient-to-r hover:from-[#00a9c3] hover:to-[#6ecf51] transition-colors"
+          >
             <Phone className="w-6 h-6 mr-2 stroke-[2.5]" />
             Contact Us
           </a>
@@ -140,8 +143,11 @@ const Header = () => {
         <div className="md:hidden flex items-center space-x-4">
           
           {/* Contact Us */}
-          <a href="tel:+1234567890" className="flex items-center text-gray-700 hover:text-green-500 text-sm font-semibold transition-colors">
-            <Phone className="h-6 w-6 mr-2 stroke-[2.5]" />
+          <a
+            href="tel:+1234567890"
+            className="flex items-center text-white bg-gradient-to-r from-[#0097b2] to-[#7ed952] px-4 py-2 rounded-[36px] hover:bg-gradient-to-r hover:from-[#00a9c3] hover:to-[#6ecf51] transition-colors"
+          >
+            <Phone className="h-6 w-6 mr-15 stroke-[2.5]" />
             Contact Us
           </a>
 

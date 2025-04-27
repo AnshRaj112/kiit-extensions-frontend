@@ -15,7 +15,7 @@ export const Footer = () => {
 
   return (
     <footer className="bg-white py-8 px-4 shadow-md mt-auto">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="space-y-6 flex flex-col justify-between">
             <div>
@@ -44,7 +44,12 @@ export const Footer = () => {
               </button>
             </div>
           </div>
-          <div className="mt-8 mb-8">  {/* Ensure equal margin-bottom as Enquire Now */}
+          {/* Flex container for social links and contact info */}
+          <div className="flex justify-between items-center mt-18 mb-2 md:mt-20">
+            <div className="flex flex-col">
+              {/* <FooterSocialLinks title="KIIT" platform="KIIT" />
+              <FooterSocialLinks title="KIITX" platform="KIITX" /> */}
+            </div>
             <ContactInfo />
           </div>
         </div>
