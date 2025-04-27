@@ -72,7 +72,7 @@ const Hero = () => {
             {/* KIIT */}
             <div className="flex items-center">
               <img
-                src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745386752/04217d2d-299c-4d61-bebc-d4210b16c30c.png"
+                src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745759124/fe79fb38-91bd-40fa-aa35-5138be9cc77c.png"
                 alt="KIIT"
                 className="h-16 md:h-20"
               />
@@ -81,55 +81,55 @@ const Hero = () => {
             {/* UGC */}
             <div className="flex items-center">
               <img
-                src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745307229/270-2706316_ugc-logo-ugc-net_lbyyki.png"
+                src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745759574/43110121-a16e-45ed-8618-98ce7dca334c.png"
                 alt="UGC"
                 className="h-14 md:h-16"
               />
-              <div className="text-xs ml-1 text-orange-600">
+              {/* <div className="text-xs ml-1 text-orange-600">
                 <div className="font-bold">UGC Entitled</div>
                 <div>Online Program</div>
-              </div>
+              </div> */}
             </div>
 
             {/* NAAC */}
             <div className="flex items-center">
               <img
-                src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316490/f1f1a227-e74e-4859-905a-8228ce4a7f71.png"
+                src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745759914/7d19bc26-3dae-4df1-b3b4-99c6da33ff94.png"
                 alt="NAAC"
                 className="h-14 md:h-16"
               />
-              <div className="text-xs ml-1 text-blue-800">
+              {/* <div className="text-xs ml-1 text-blue-800">
                 <div className="font-bold">NAAC A++</div>
                 <div>Accredited</div>
-              </div>
+              </div> */}
             </div>
 
             {/* Association of Indian Universities */}
             <div className="flex items-center">
               <img
-                src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745386804/1f8f9659-9455-4111-843b-e1d71f6aeae3.png"
+                src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745760458/dbf0225a-ce08-4f96-b841-a23d753cc8bc.png"
                 alt="AIU"
                 className="h-14 md:h-16"
               />
-              <div className="text-xs ml-1 text-blue-700">
+              {/* <div className="text-xs ml-1 text-blue-700">
                 <div className="font-bold">Association of Indian</div>
                 <div>Universities Member</div>
-              </div>
+              </div> */}
             </div>
 
             {/* NIRF */}
             <div className="flex items-center">
               <img
-                src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316828/46fcf251-f75a-4a70-bbdb-5a32ac003fca.png"
+                src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745760448/a8515449-f40a-41a2-838c-1b994d8f4a26.png"
                 alt="NIRF"
                 className="h-14 md:h-16"
               />
-              <div className="text-xs ml-1 text-red-600">
+              {/* <div className="text-xs ml-1 text-red-600">
                 <div className="font-bold">NIRF</div>
                 <div>
                   Rank 15<sup>th</sup>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
