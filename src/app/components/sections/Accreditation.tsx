@@ -44,16 +44,16 @@ const AccreditationAndRanking = () => {
       color: "#0097b2",
     },
     {
-      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316490/f1f1a227-e74e-4859-905a-8228ce4a7f71.png",
-      alt: "NAAC Logo",
-      texts: ["A++ Grade", "Accredited by", "NAAC"],
-      color: "#737373",
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745736616/cc5d6f9f-8e2e-4273-835d-184e420b7e4c.png",
+      alt: "ABET",
+      texts: ["ABET", "US"],
+      color: "Grey",
     },
     {
-      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316597/445f1c76-6728-4cb5-b8ee-89420af6a41b.png",
-      alt: "NBA Logo",
-      texts: ["Tier 1", "Accreditation", "Washington Accord"],
-      color: "#0097b2",
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745736727/c9adcb4e-69a8-4b87-be05-8d0578c02c67.png",
+      alt: "IET",
+      texts: ["The Institution of", "Engineering and", "Technology"],
+      color: "#964f9f",
     },
   ];
 
@@ -62,7 +62,11 @@ const AccreditationAndRanking = () => {
       img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316828/46fcf251-f75a-4a70-bbdb-5a32ac003fca.png",
       alt: "NIRF Logo",
       border: "border-pink-300",
-      texts: ["15th Rank", "Among All Public & Private", "Universities in India"],
+      texts: [
+        "15th Rank",
+        "Among All Public & Private",
+        "Universities in India",
+      ],
     },
     {
       img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316931/4413100a-f28b-43ce-99a9-9db1a9535ede.png",
@@ -73,7 +77,8 @@ const AccreditationAndRanking = () => {
         "India’s first QS 5 Stars Rated",
         "University – 2021",
         "257th Rank",
-        "In QS World University", "Rankings: ASIA 2025",
+        "In QS World University",
+        "Rankings: ASIA 2025",
       ],
     },
     {
@@ -92,6 +97,53 @@ const AccreditationAndRanking = () => {
         "among Indian universities",
       ],
     },
+    {
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745734267/72b36b5e-64e9-434e-9931-05b1047bb2a2.png",
+      alt: "QS 5 Star",
+      border: "border-purple-400",
+      texts: [
+        "QS 5 Stars",
+        "India’s first QS",
+        "5 Stars Rated",
+        "University – 2021",
+      ],
+    },
+    {
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745317095/f3aec781-6341-492d-af72-2b90e56f7957.png",
+      alt: "The world ranking 2024",
+      border: "border-green-400",
+      texts: ["2024", "Ranked in", "601-800"],
+    },
+    {
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745735107/64beb2a9-b652-4821-a31c-327a151f0a13.png",
+      alt: "The World Ranking Young",
+      border: "border-gray-400",
+      texts: ["168th rank", "in world", ""],
+    },
+    {
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745735107/64beb2a9-b652-4821-a31c-327a151f0a13.png",
+      alt: "The World Ranking Young",
+      border: "border-pink-400",
+      texts: ["10th rank", "in India", ""],
+    },
+    {
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745735697/258d01cb-8f39-42ed-b1ec-02acb16c1424.png",
+      alt: "The World Ranking Asia 2025",
+      border: "border-pink-400",
+      texts: ["184th rank", "The Asia University", "Ranking - 2025"],
+    },
+    {
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745735697/258d01cb-8f39-42ed-b1ec-02acb16c1424.png",
+      alt: "The World Ranking Asia 2025",
+      border: "border-blue-400",
+      texts: ["8th best in", "India Among Gov.", "and Pvt. Institutions"],
+    },
+    {
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745736454/592050c2-b468-4a5a-8014-72dda03ca239.png",
+      alt: "The World Ranking Asia 2025",
+      border: "border-red-400",
+      texts: ["Ranking in", "201-300", ""],
+    },
   ];
 
   return (
@@ -103,37 +155,11 @@ const AccreditationAndRanking = () => {
       <div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-1/2 md:w-1/3" />
 
       <div className="relative w-full overflow-hidden">
-        <div className="flex animate-infinite-scroll">
-          {accreditations.map((item, idx) => (
+        <div className="flex w-max animate-scroll">
+          {[...accreditations, ...accreditations].map((item, idx) => (
             <div
               key={idx}
-              className="flex-none w-[200px] h-[200px] bg-white m-4 p-4 rounded-2xl shadow-xl text-center flex flex-col justify-center items-center gap-2"
-            >
-              <Image
-                src={item.img}
-                alt={item.alt}
-                width={70}
-                height={70}
-                className="mx-auto object-contain"
-              />
-              <div className="mt-2 space-y-1">
-                {item.texts.map((text, i) => (
-                  <p
-                    key={i}
-                    className="font-bold text-sm"
-                    style={{ color: item.color }}
-                  >
-                    {text}
-                  </p>
-                ))}
-              </div>
-            </div>
-          ))}
-          {/* Duplicate the accreditations here for continuous scrolling */}
-          {accreditations.map((item, idx) => (
-            <div
-              key={`duplicate-${idx}`}
-              className="flex-none w-[200px] h-[200px] bg-white m-4 p-4 rounded-2xl shadow-xl text-center flex flex-col justify-center items-center gap-2"
+              className="flex-none w-[200px] h-[200px] bg-white m-3 p-4 rounded-2xl shadow-xl text-center flex flex-col justify-center items-center gap-2"
             >
               <Image
                 src={item.img}
@@ -165,8 +191,8 @@ const AccreditationAndRanking = () => {
       <div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-1/2 md:w-1/3" />
 
       <div className="relative w-full overflow-hidden">
-        <div className="flex animate-infinite-scroll">
-          {rankings.map((item, idx) => (
+        <div className="flex w-max animate-scroll-slow">
+          {[...rankings, ...rankings].map((item, idx) => (
             <div
               key={idx}
               className={`flex-none w-[250px] h-[250px] bg-white border-4 ${item.border} m-4 rounded-2xl shadow-xl p-4 text-center flex flex-col justify-center items-center`}
@@ -174,28 +200,8 @@ const AccreditationAndRanking = () => {
               <Image
                 src={item.img}
                 alt={item.alt}
-                width={90}
-                height={60}
-                className="mx-auto mb-2 object-contain"
-              />
-              <div className="space-y-1 text-gray-700 text-sm font-semibold">
-                {item.texts.map((text, i) => (
-                  <p key={i}>{text}</p>
-                ))}
-              </div>
-            </div>
-          ))}
-          {/* Duplicate the rankings here for continuous scrolling */}
-          {rankings.map((item, idx) => (
-            <div
-              key={`duplicate-${idx}`}
-              className={`flex-none w-[250px] h-[250px] bg-white border-4 ${item.border} m-4 rounded-2xl shadow-xl p-4 text-center flex flex-col justify-center items-center`}
-            >
-              <Image
-                src={item.img}
-                alt={item.alt}
-                width={90}
-                height={60}
+                width={100}
+                height={70}
                 className="mx-auto mb-2 object-contain"
               />
               <div className="space-y-1 text-gray-700 text-sm font-semibold">
@@ -212,15 +218,3 @@ const AccreditationAndRanking = () => {
 };
 
 export default AccreditationAndRanking;
-
-// Add the CSS for smooth scrolling and animation
-<style jsx>{`
-  @keyframes infinite-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-  }
-
-  .animate-infinite-scroll {
-    animation: infinite-scroll 15s linear infinite;
-  }
-`}</style>

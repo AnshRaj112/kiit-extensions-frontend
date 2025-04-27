@@ -78,7 +78,7 @@ export default function EnquiryForm({ close }: { close: () => void }) {
   return (
     <div className="fixed inset-0 bg-black/40 z-[999] flex justify-center items-center">
       <ToastContainer />
-      <div className="relative bg-white p-8 rounded-md w-[450px] shadow-lg space-y-6">
+      <div className="relative bg-white p-6 rounded-md w-[400px] shadow-lg space-y-6">
         <button
           onClick={close}
           className="absolute top-2 right-2 text-gray-600 hover:text-black text-2xl font-bold"
