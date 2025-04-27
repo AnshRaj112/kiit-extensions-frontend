@@ -2,12 +2,12 @@ import { Download } from "lucide-react";
 
 const Hero = () => {
   return (
-    <div className="min-h-screen pt-15">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <div className="relative">
         <div className="w-full h-[500px] overflow-hidden">
           <img
-            src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745672130/0e81c71e-f8ea-40ec-9d90-9ceec6f14026.png"
+            src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745777839/4126d11c-af37-42ec-8f8d-70bc21fcf419.png"
             alt="Student studying online"
             className="w-full h-full object-cover"
           />

@@ -7,6 +7,7 @@ export interface IProgram extends Document {
   duration: string;
   fees: string;
   category: "undergraduate" | "postgraduate" | "certificate";
+  link: string;  // Add this field for the link to the detail page
 }
 
 const ProgramSchema: Schema = new Schema(
@@ -20,11 +21,11 @@ const ProgramSchema: Schema = new Schema(
       enum: ["undergraduate", "postgraduate", "certificate"],
       required: true,
     },
+    link: { type: String, required: true },  // Store the link to the program detail page
   },
   { timestamps: true }
 );
 
-// export default mongoose.model<IProgram>("Program", ProgramSchema);
 const Program = mongoose.models.Program || mongoose.model("Program", ProgramSchema);
 
 export default Program;

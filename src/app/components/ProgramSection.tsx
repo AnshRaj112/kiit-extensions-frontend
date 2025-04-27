@@ -1,3 +1,4 @@
+// components/ProgramSection.tsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -10,6 +11,7 @@ type Program = {
   title: string;
   duration: string;
   fees: string;
+  link: string;  // Ensure this is included in the data model
 };
 
 type SectionProps = {
@@ -60,7 +62,7 @@ const ProgramSection: React.FC<SectionProps> = ({
     <section className="my-12 flex justify-center">
       <div className="w-full max-w-5xl">
         <h2
-          className="text-2xl font-medium text-center py-2 mb-6 rounded-2xl shadow"
+          className="text-xl font-medium text-center py-2 mb-6 rounded-2xl shadow"
           style={headerStyles}
         >
           {title}
@@ -75,6 +77,7 @@ const ProgramSection: React.FC<SectionProps> = ({
                 title={program.title}
                 duration={program.duration}
                 fees={program.fees}
+                link={program.link || "/default-link"}  // Use a fallback link if `link` is missing
               />
             ))
           ) : (

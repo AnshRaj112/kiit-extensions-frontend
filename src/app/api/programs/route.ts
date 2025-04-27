@@ -1,4 +1,3 @@
-// app/api/programs/route.ts
 import { connectDB } from "@/lib/db";
 import Program from "@/models/Program";
 import { NextRequest, NextResponse } from "next/server";
@@ -13,6 +12,8 @@ export async function GET(req: NextRequest) {
     const query = category ? { category } : {};
 
     const programs = await Program.find(query);
+    
+    // Returning programs with the link field included
     return NextResponse.json({ success: true, data: programs });
   } catch (err) {
     return NextResponse.json(
@@ -28,8 +29,18 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     await connectDB();
 
-    const { title, image, duration, fees, category } = body;
-    const newProgram = await Program.create({ title, image, duration, fees, category });
+    const { title, image, duration, fees, category, link } = body;
+    
+    // Ensure the link field is passed and validate
+    if (!link || typeof link !== 'string') {
+      return NextResponse.json(
+        { success: false, message: "Link is required and should be a string." },
+        { status: 400 }
+      );
+    }
+
+    // Create a new program with the link field
+    const newProgram = await Program.create({ title, image, duration, fees, category, link });
 
     return NextResponse.json({ success: true, data: newProgram }, { status: 201 });
   } catch (err) {
