@@ -57,7 +57,7 @@ const Header = () => {
         </div>
 
         {/* Desktop Right Section */}
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden md:flex bg-white items-center space-x-6">
           
           {/* Contact Us */}
           <a
@@ -68,8 +68,16 @@ const Header = () => {
             Contact Us
           </a>
 
+          {/* Portal Login */}
+          <Link
+            href="/portal-login"
+            className="flex items-center text-gray-800 hover:text-green-500 text-base font-semibold transition-colors"
+          >
+            Portal Login
+          </Link>
+
           {/* Program */}
-          <div className="relative">
+          <div className="relative bg-white">
             <button
               onClick={() => setIsProgramOpen(!isProgramOpen)}
               className="flex items-center text-gray-800 hover:text-green-500 text-base font-semibold transition-colors"
@@ -79,7 +87,7 @@ const Header = () => {
             </button>
 
             {isProgramOpen && (
-              <div className="absolute top-14 right-0 border rounded shadow-lg w-60">
+              <div className="absolute top-14 bg-white right-0 border rounded shadow-lg w-60">
                 {programOptions.map((option, index) => (
                   <div
                     key={index}
@@ -87,18 +95,18 @@ const Header = () => {
                     onMouseLeave={() => setActiveOption(null)}
                     className="relative group"
                   >
-                    <div className="px-4 py-2 hover:bg-green-100 cursor-pointer flex justify-between items-center transition-colors">
+                    <div className="px-4 py-2 bg-white hover:bg-green-100 cursor-pointer flex justify-between items-center transition-colors">
                       {option.title}
                     </div>
 
                     {/* SubOptions */}
                     {activeOption === index && (
-                      <div className="absolute top-0 right-full border rounded shadow-lg w-52 mr-2">
+                      <div className="absolute bg-white top-0 right-full border rounded shadow-lg w-52 mr-2">
                         {option.subOptions.map((sub, subIndex) => (
                           <Link
                             key={subIndex}
                             href={sub.href}
-                            className="block px-4 py-2 hover:bg-green-100 text-sm transition-colors"
+                            className="block px-4 py-2 bg-white hover:bg-green-100 text-sm transition-colors"
                           >
                             {sub.title}
                           </Link>
@@ -110,44 +118,17 @@ const Header = () => {
               </div>
             )}
           </div>
-
-          {/* Menu Button */}
-          <div className="relative">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-800 hover:text-green-500 transition-colors"
-            >
-              <Menu className="w-6 h-6 stroke-[2.5]" />
-            </button>
-
-            {isMobileMenuOpen && (
-              <div className="absolute top-12 right-0 border rounded shadow-lg w-40">
-                <Link
-                  href="/portal-login"
-                  className="block px-4 py-2 hover:bg-green-100 text-sm transition-colors"
-                >
-                  Portal Login
-                </Link>
-                <Link
-                  href="/contact-us"
-                  className="block px-4 py-2 hover:bg-green-100 text-sm transition-colors"
-                >
-                  Contact Us
-                </Link>
-              </div>
-            )}
-          </div>
         </div>
 
         {/* Mobile Header */}
-        <div className="md:hidden flex items-center space-x-4">
+        <div className="md:hidden flex bg-white items-center space-x-4">
           
           {/* Contact Us */}
           <a
             href="tel:+1234567890"
             className="flex items-center text-white bg-gradient-to-r from-[#0097b2] to-[#7ed952] px-4 py-2 rounded-[36px] hover:bg-gradient-to-r hover:from-[#00a9c3] hover:to-[#6ecf51] transition-colors"
           >
-            <Phone className="h-6 w-6 mr-15 stroke-[2.5]" />
+            <Phone className="h-6 w-6 mr-2 stroke-[2.5]" />
             Contact Us
           </a>
 
@@ -193,9 +174,6 @@ const Header = () => {
           <div className="border-t pt-4 space-y-2">
             <Link href="/portal-login" className="block text-gray-700 hover:text-green-500 text-sm transition-colors">
               Portal Login
-            </Link>
-            <Link href="/contact-us" className="block text-gray-700 hover:text-green-500 text-sm font-semibold transition-colors">
-              Contact Us
             </Link>
           </div>
         </div>
