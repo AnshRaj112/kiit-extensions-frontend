@@ -67,7 +67,21 @@ import {
     return (
       <section className="bg-white py-12 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-green-500 mb-10">Potential Career Paths</h2>
+        <h1
+          className="relative inline-block text-4xl font-bold mb-10 text-green-500 
+          after:content-[''] 
+          after:absolute 
+          after:left-0 
+          after:bottom-[-19px] 
+          after:w-full 
+          sm:after:w-[103%] 
+          after:h-1 
+          after:bg-gradient-to-r 
+          after:from-[#0097b2] 
+          after:to-[#7ed952]"
+        >
+          Potential Career Paths
+        </h1>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {careerCategories.map((category, index) => (
