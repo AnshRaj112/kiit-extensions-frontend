@@ -46,7 +46,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
+    <header className="sticky top-0 z-50 shadow-md bg-white">
       <div className="flex justify-between items-center px-6 py-3 min-h-[60px]">
         
         {/* Left: Logo */}
@@ -79,7 +79,7 @@ const Header = () => {
             </button>
 
             {isProgramOpen && (
-              <div className="absolute top-14 right-0 bg-white border rounded shadow-lg w-60">
+              <div className="absolute top-14 right-0 border rounded shadow-lg w-60">
                 {programOptions.map((option, index) => (
                   <div
                     key={index}
@@ -93,7 +93,7 @@ const Header = () => {
 
                     {/* SubOptions */}
                     {activeOption === index && (
-                      <div className="absolute top-0 right-full bg-white border rounded shadow-lg w-52 mr-2">
+                      <div className="absolute top-0 right-full border rounded shadow-lg w-52 mr-2">
                         {option.subOptions.map((sub, subIndex) => (
                           <Link
                             key={subIndex}
@@ -121,7 +121,7 @@ const Header = () => {
             </button>
 
             {isMobileMenuOpen && (
-              <div className="absolute top-12 right-0 bg-white border rounded shadow-lg w-40">
+              <div className="absolute top-12 right-0 border rounded shadow-lg w-40">
                 <Link
                   href="/portal-login"
                   className="block px-4 py-2 hover:bg-green-100 text-sm transition-colors"
@@ -160,7 +160,7 @@ const Header = () => {
 
       {/* Mobile Menu Content */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-md px-6 py-4 space-y-4">
+        <div className="md:hidden shadow-md px-6 py-4 space-y-4">
           <div className="border-t pt-4">
             <p className="text-gray-800 font-semibold mb-2">Program</p>
             {programOptions.map((option, index) => (
