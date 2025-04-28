@@ -51,7 +51,7 @@ const Pillar = ({
                 src={LOGO_PLACEHOLDERS[logoIndex]}
                 alt={`${title} logo`}
                 className="object-cover"
-                style={{ width: "40%", height: "40%" }} // Resize logo to 40% of its original size
+                style={{ width: "50%", height: "50%" }} // Resize logo to 50% of its original size
                 onError={(e) => {
                   e.currentTarget.src = LOGO_PLACEHOLDERS[0];
                 }}
