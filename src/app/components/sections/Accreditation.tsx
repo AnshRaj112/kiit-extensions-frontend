@@ -145,13 +145,6 @@ const AccreditationAndRanking = () => {
     },
   ];
 
-  // Function to make "st" and "th" bold
-  // const makeRankingsBold = (text: string) => {
-  //   return text.replace(/(\d+(st|nd|rd|th))/g, (match) => {
-  //     return `<span class="font-bold">${match}</span>`;
-  //   });
-  // };
-
   return (
     <div className="px-4 sm:px-8 md:px-16 py-16 max-w-[1600px] mx-auto overflow-hidden">
       {/* Accreditation Section */}
