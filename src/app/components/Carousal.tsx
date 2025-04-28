@@ -36,9 +36,9 @@ export function HomeCarousel() {
           stopOnInteraction: false,
         }),
       ]}
-      className="w-full" // <-- Removed pt-[60px] and sm:pt-0
+      className="w-full"
     >
-      <CarouselContent className="m-0 p-0"> {/* Ensure no extra margin or padding */}
+      <CarouselContent className="m-0 p-0">
         {images.map((image, index) => (
           <CarouselItem key={index} className="flex justify-center items-center w-full m-0 p-0">
             <a href={image.link} target="_blank" rel="noopener noreferrer" className="w-full m-0 p-0">
@@ -48,7 +48,7 @@ export function HomeCarousel() {
                 width={1899}
                 height={818}
                 priority={index === 0}
-                className="w-full h-auto rounded-lg shadow-lg m-0 p-0"
+                className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover rounded-lg shadow-lg m-0 p-0"
               />
             </a>
           </CarouselItem>
