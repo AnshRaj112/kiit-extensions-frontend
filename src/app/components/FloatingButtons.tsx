@@ -35,7 +35,7 @@ export default function FloatingButtons() {
           onClick={handleApplyNowClick}
           className="flex items-center justify-center w-16 h-16 rounded-full bg-green-500 border-4 border-light-green-500 shadow-xl hover:shadow-2xl transition-shadow duration-300 animate-pulse"
         >
-          <span className="text-white font-bold text-xs">Apply</span>
+          <span className="text-white font-bold text-xs">Apply Now</span>
         </button>
       </div>
 
