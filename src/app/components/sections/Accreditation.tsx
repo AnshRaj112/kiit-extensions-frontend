@@ -8,7 +8,7 @@ interface AccreditationItem {
   alt: string;
   texts: string[];
   color: string;
-  border?: string; 
+  border?: string;
 }
 
 interface RankingItem {
@@ -65,7 +65,7 @@ const AccreditationAndRanking = () => {
 
   const rankings: RankingItem[] = [
     {
-      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316828/46fcf251-f75a-4a70-bbdb-5a32ac003fca.png",
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745820210/15573ee7-7bc0-4576-af9f-174ddcf993f6.png",
       alt: "NIRF Logo",
       border: "border-pink-300",
       texts: [
@@ -75,19 +75,19 @@ const AccreditationAndRanking = () => {
       ],
     },
     {
-      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745316931/4413100a-f28b-43ce-99a9-9db1a9535ede.png",
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745820260/6a0e4c26-ac8c-48fb-9bd7-f0217dc9a9a5.png",
       alt: "QS Logo",
       border: "border-green-300",
       texts: ["257th Rank", "In QS World University", "Rankings: ASIA 2025"],
     },
     {
-      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745317017/157bcf7d-49fe-4b4d-bce1-a66d3e97798b.png",
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745820319/60f2f4c2-6948-4b5a-87e2-24ac51510152.png",
       alt: "ARIIA Logo",
       border: "border-purple-400",
       texts: ["1st Rank", "for second time", "Continuously"],
     },
     {
-      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745317095/f3aec781-6341-492d-af72-2b90e56f7957.png",
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745820357/8d2a9246-ae2b-4ae3-b048-2767efde7cd3.png",
       alt: "THE Logo",
       border: "border-cyan-400",
       texts: [
@@ -97,7 +97,7 @@ const AccreditationAndRanking = () => {
       ],
     },
     {
-      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745734267/72b36b5e-64e9-434e-9931-05b1047bb2a2.png",
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745820420/c918835d-3db2-417a-ada2-1a9417eb495c.png",
       alt: "QS 5 Star",
       border: "border-purple-400",
       texts: [
@@ -108,37 +108,37 @@ const AccreditationAndRanking = () => {
       ],
     },
     {
-      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745317095/f3aec781-6341-492d-af72-2b90e56f7957.png",
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745820463/a913f108-7730-420d-90d1-5d610cd0bcaa.png",
       alt: "The world ranking 2024",
       border: "border-green-400",
       texts: ["2024", "Ranked in", "601th-800th"],
     },
     {
-      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745735107/64beb2a9-b652-4821-a31c-327a151f0a13.png",
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745820487/6a3ef1a6-a873-4256-bf00-f7ac92385402.png",
       alt: "The World Ranking Young",
       border: "border-gray-400",
       texts: ["168th rank", "in world", ""],
     },
     {
-      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745735107/64beb2a9-b652-4821-a31c-327a151f0a13.png",
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745820582/cda2f08b-c66f-4d67-b4d5-009a06abc452.png",
       alt: "The World Ranking Young",
       border: "border-pink-400",
       texts: ["10th rank", "in India", ""],
     },
     {
-      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745735697/258d01cb-8f39-42ed-b1ec-02acb16c1424.png",
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745820599/6dca3ba4-6329-471b-a9ae-f18485ce1a0f.png",
       alt: "The World Ranking Asia 2025",
       border: "border-pink-400",
       texts: ["184th rank", "The Asia University", "Ranking - 2025"],
     },
     {
-      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745735697/258d01cb-8f39-42ed-b1ec-02acb16c1424.png",
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745820624/0dd067e9-8737-4a0d-afae-8b2b5a1c900b.png",
       alt: "The World Ranking Asia 2025",
       border: "border-blue-400",
       texts: ["8th best in", "India Among Gov.", "and Pvt. Institutions"],
     },
     {
-      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745736454/592050c2-b468-4a5a-8014-72dda03ca239.png",
+      img: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745818391/c3ac0a4b-c2f3-42a8-8457-f47973213376.png",
       alt: "The World Ranking Asia 2025",
       border: "border-red-400",
       texts: ["Ranking in", "201-300", ""],
@@ -146,11 +146,11 @@ const AccreditationAndRanking = () => {
   ];
 
   // Function to make "st" and "th" bold
-  const makeRankingsBold = (text: string) => {
-    return text.replace(/(\d+(st|nd|rd|th))/g, (match) => {
-      return `<span class="font-bold">${match}</span>`;
-    });
-  };
+  // const makeRankingsBold = (text: string) => {
+  //   return text.replace(/(\d+(st|nd|rd|th))/g, (match) => {
+  //     return `<span class="font-bold">${match}</span>`;
+  //   });
+  // };
 
   return (
     <div className="px-4 sm:px-8 md:px-16 py-16 max-w-[1600px] mx-auto overflow-hidden">
@@ -197,32 +197,23 @@ const AccreditationAndRanking = () => {
       </div>
 
       {/* Ranking Section */}
-      <h2 className="text-4xl font-bold text-center text-green-700 mt-10 mb-8">
-        Ranking
+      <h2 className="text-4xl font-bold text-center text-green-700 mt-20 mb-8">
+        Rankings
       </h2>
-      <div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#0097b2] to-[#7ed952] rounded-full w-1/2 md:w-1/3" />
+      <div className="h-0.5 mx-auto mb-12 bg-gradient-to-r from-[#7ed952] to-[#0097b2] rounded-full w-1/2 md:w-1/3" />
 
       <div className="relative w-full overflow-hidden">
-        <div className="flex w-max animate-scroll-slow">
+        <div className="flex w-max animate-scroll">
           {[...rankings, ...rankings].map((item, idx) => (
             <div
               key={idx}
-              className={`flex-none w-[250px] h-[250px] bg-white border-4 ${item.border} m-4 rounded-2xl shadow-xl p-4 text-center flex flex-col justify-center items-center`}
+              className={`flex-none w-[250px] h-[250px] bg-white border-4 ${item.border} m-4 rounded-2xl shadow-xl overflow-hidden relative`}
             >
               <Image
                 src={item.img}
                 alt={item.alt}
-                width={100}
-                height={70}
-                className="mx-auto mb-2 object-contain"
-              />
-              <div
-                className="space-y-1 text-gray-700 text-sm font-semibold"
-                dangerouslySetInnerHTML={{
-                  __html: item.texts
-                    .map((text) => makeRankingsBold(text))
-                    .join(" "),
-                }}
+                fill
+                className="object-cover"
               />
             </div>
           ))}

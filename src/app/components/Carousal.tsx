@@ -32,23 +32,23 @@ export function HomeCarousel() {
       setApi={setApi}
       plugins={[
         Autoplay({
-          delay: 2000, 
+          delay: 2000,
           stopOnInteraction: false,
         }),
       ]}
-      className="w-full pt-[60px] sm:pt-0" 
+      className="w-full" // <-- Removed pt-[60px] and sm:pt-0
     >
-      <CarouselContent>
+      <CarouselContent className="m-0 p-0"> {/* Ensure no extra margin or padding */}
         {images.map((image, index) => (
-          <CarouselItem key={index} className="flex justify-center items-center w-full">
-            <a href={image.link} target="_blank" rel="noopener noreferrer" className="w-full">
+          <CarouselItem key={index} className="flex justify-center items-center w-full m-0 p-0">
+            <a href={image.link} target="_blank" rel="noopener noreferrer" className="w-full m-0 p-0">
               <Image
                 src={image.src}
                 alt={image.alt}
-                width={1899} // Adjusted for full width
-                height={818} // Maintains aspect ratio
-                priority={index === 0} 
-                className="w-full h-auto rounded-lg shadow-lg"
+                width={1899}
+                height={818}
+                priority={index === 0}
+                className="w-full h-auto rounded-lg shadow-lg m-0 p-0"
               />
             </a>
           </CarouselItem>

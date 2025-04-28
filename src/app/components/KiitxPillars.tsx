@@ -14,10 +14,10 @@ interface PillarProps {
 
 const LOGO_PLACEHOLDERS = [
   "/lovable-uploads/3f0af599-ceb3-405e-9bba-ce2e66aa6bd7.png",
-  "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=64&h=64",
-  "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=64&h=64",
-  "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1?auto=format&fit=crop&w=64&h=64",
-  "https://images.unsplash.com/photo-1501286353178-1ec881214838?auto=format&fit=crop&w=64&h=64",
+  "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745815233/65e34244-712e-4d4a-9a68-ff360ae7736a.png?auto=format&fit=crop&w=64&h=64",
+  "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745815281/Pngtree_construction_worker_glyph_icon_4008196_ukivil.png?auto=format&fit=crop&w=64&h=64",
+  "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745815263/skill_xbfpt0.png?auto=format&fit=crop&w=64&h=64",
+  "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745815248/online-class_csbjkn.png?auto=format&fit=crop&w=64&h=64",
 ];
 
 const Pillar = ({
@@ -92,7 +92,7 @@ const KiiTX = () => {
         "Offers UGC Entitled online learning programs equivalent to regular degrees.",
       colorClass: "bg-pink-400",
       logoIndex: 1,
-      logoLink: "https://example.com/cdoe",
+      logoLink: "/",
     },
     {
       title: "KWIL",
@@ -101,7 +101,7 @@ const KiiTX = () => {
         "Offers AICTE approved Engineering and Management programs for Working Professionals.",
       colorClass: "bg-cyan-400",
       logoIndex: 2,
-      logoLink: "https://example.com/kwil",
+      logoLink: "/",
     },
     {
       title: "KSDC",
@@ -110,7 +110,7 @@ const KiiTX = () => {
         "Offers short-term credit-linked certificate programs in various modes.",
       colorClass: "bg-purple-400",
       logoIndex: 3,
-      logoLink: "https://example.com/ksdc",
+      logoLink: "/",
     },
     {
       title: "KALAM",
@@ -119,7 +119,7 @@ const KiiTX = () => {
         "Offers MOOCs linked to academic credit for UG/PG/PhD students.",
       colorClass: "bg-green-400",
       logoIndex: 4,
-      logoLink: "https://example.com/kalam",
+      logoLink: "/",
     },
   ];
 
@@ -160,7 +160,7 @@ const KiiTX = () => {
 
       {/* Foundation */}
       <div className="w-full max-w-6xl mt-4 flex flex-col items-center">
-        <div className="h-6 w-full sm:w-10/12 md:w-8/12 lg:w-full bg-gray-300 rounded-lg mb-2" />
+        <div className="h-6 w-full sm:w-11/12 md:w-11/12 lg:w-10/12 bg-gray-300 rounded-lg mb-2" />
         <div className="h-6 w-full sm:w-10/12 md:w-8/12 lg:w-full bg-gray-300 rounded-lg mb-2" />
       </div>
     </div>

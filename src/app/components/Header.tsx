@@ -161,9 +161,9 @@ const Header = () => {
         {/* Mobile Header */}
         <div className="md:hidden flex bg-white items-center space-x-4">
           {/* Contact Us with Phone Number for Mobile */}
-          <div className="flex items-center text-white bg-gradient-to-r from-[#0097b2] to-[#7ed952] px-4 py-2 rounded-[36px] hover:bg-gradient-to-r hover:from-[#00a9c3] hover:to-[#6ecf51] transition-colors">
-            <Phone className="w-6 h-6 mr-2 stroke-[2.5]" />
-            <span className="text-sm">+123 456 7890</span> {/* Phone Number */}
+          <div className="flex items-center text-white bg-gradient-to-r from-[#0097b2] to-[#7ed952] px-3 py-1 rounded-[30px] hover:bg-gradient-to-r hover:from-[#00a9c3] hover:to-[#6ecf51] transition-colors">
+            <Phone className="w-4 h-4 mr-1 stroke-[2.5]" />
+            <span className="text-xs">+123 456 7890</span> {/* Phone Number */}
           </div>
 
           {/* Mobile Menu Button */}
