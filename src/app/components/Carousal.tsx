@@ -23,8 +23,8 @@ export function HomeCarousel() {
   }, [api]);
 
   const images = [
-    { src: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1743712271/odp_q5zobq.jpg", link: "https://example.com/page1", alt: "Image 1" },
-    { src: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1743712271/continuing_education_bx7zn6.jpg", link: "https://example.com/page2", alt: "Image 2" },
+    { src: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745843232/web_cover_1_opiihl.png", link: "/", alt: "Image 1" },
+    { src: "https://res.cloudinary.com/dt45pu5mx/image/upload/v1745843233/webcover_2_rgjkk9.png", link: "/", alt: "Image 2" },
   ];
 
   return (

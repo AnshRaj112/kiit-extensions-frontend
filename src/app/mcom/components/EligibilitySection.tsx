@@ -63,7 +63,7 @@ const EligibilitySection: React.FC = () => {
         <div className="lg:w-2/5">
           <div className="rounded-lg overflow-hidden h-full">
             <img
-              src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1742974664/samples/breakfast.jpg"
+              src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745843234/eligible_ss5nh3.png"
               alt="Eligibility Check"
               className="w-full h-full object-cover"
             />

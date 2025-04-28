@@ -29,7 +29,7 @@ const CertificateSection = () => {
           <div className="w-full md:w-1/2 flex justify-center">
             <div className="w-full sm:w-3/4 md:w-full bg-white p-3 sm:p-6 rounded-lg shadow-2xl">
               <img 
-                src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1742974665/samples/coffee.jpg"
+                src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745843232/DEGREE_FORMAT_1_cp18pz.jpg"
                 alt="Sample KIIT Certificate"
                 className="w-full h-auto object-contain rounded-md"
               />

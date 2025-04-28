@@ -47,16 +47,16 @@ const AdmissionProcess: React.FC = () => {
       <div className="mx-auto" style={{ maxWidth: "67rem" }}>
         <h1
           className="relative inline-block text-4xl font-bold text-green-500 
-  after:content-[''] 
-  after:absolute 
-  after:left-0 
-  after:bottom-[-19px] 
-  after:w-full 
-  sm:after:w-[130%] 
-  after:h-1 
-  after:bg-gradient-to-r 
-  after:from-[#0097b2] 
-  after:to-[#7ed952]"
+          after:content-[''] 
+          after:absolute 
+          after:left-0 
+          after:bottom-[-19px] 
+          after:w-full 
+          sm:after:w-[130%] 
+          after:h-1 
+          after:bg-gradient-to-r 
+          after:from-[#0097b2] 
+          after:to-[#7ed952]"
         >
           Admission Process
         </h1>
@@ -126,11 +126,11 @@ const AdmissionProcess: React.FC = () => {
           </div>
 
           {/* Image */}
-          <div className="md:w-2/5 flex justify-center items-center">
+          <div className="md:w-3/5 flex justify-center items-center h-[500px] mt-20 mx-auto">
             <img
-              src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1742974664/samples/breakfast.jpg"
+              src="https://res.cloudinary.com/dt45pu5mx/image/upload/v1745843232/admission_rnao8j.png"
               alt="Student applying online"
-              className="rounded-lg w-full h-auto object-cover shadow-lg"
+              className="rounded-lg w-full h-full object-cover shadow-lg"
             />
           </div>
         </div>
